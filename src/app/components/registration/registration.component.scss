@@ -1,0 +1,109 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3%;
+	margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 0;
+    border: 0.5px solid #b8b3b3;
+    border-radius: 8px;
+    padding: 20px;
+}
+.container-left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    padding: 5px;
+}
+.container-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 60px;
+}
+
+.form-logo{
+    padding-left: 5px;
+}
+.logo-head{
+    font-size: x-large;
+}
+.form-head {
+    margin-bottom: 22px;
+    padding-left: 5px;
+
+}
+.email-field{
+    width: 412px; 
+}
+
+.password-check{
+    padding-left: 5px;
+}
+.form-field-password{
+    margin-bottom: 20px;
+}
+.next-button{
+    background-color: #1a73e8;
+    color: aliceblue;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    height: 40px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+a{
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 5px;
+    padding-right: 240px;
+}
+mat-checkbox{
+    padding-left: 5px;
+    color: #1d1a1a;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+h2{
+    font-weight: 400;
+    font-size: 24px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+}
+h4{
+    padding-left: 5px;
+    color: #0306c3;
+   
+}
+img {
+    height: 280px;
+    width: auto;
+}
+mat-form-field{
+    padding-right: 10px;
+}
+p{
+    text-align: center;
+    color: #a39999;
+    
+}
+@media screen and (max-width:1300px) {
+    .form-container{
+        display: flex;
+        flex-wrap: wrap;
+        border: .5px solid rgb(184, 183, 185);
+        margin: 2px;
+    }
+    .container-right{
+        display: none;
+    }
+    .email-field{
+        width: auto;
+    
+    }
+}
