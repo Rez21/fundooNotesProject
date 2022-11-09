@@ -1,13 +1,6 @@
 <div class="main-signIn-container">
     <div class="logo">
-            <h2 class="logo-head">
-            <span style="color: rgb(60, 122, 238)">F</span>
-            <span style="color: tomato">u</span>
-            <span style="color: gray">n</span>
-            <span style="color: rgb(60, 122, 237)">d</span>
-            <span style="color: blueviolet">o</span>
-            <span style="color: red">o</span>
-          </h2>    
+        <app-fundoo-logo></app-fundoo-logo>    
     </div>
     <div class="sign-in-head">
         <h2>Sign in</h2>
@@ -20,19 +13,23 @@
         <mat-form-field class="email-phone-input" appearance="outline">
             <mat-label >Email or Phone</mat-label>
             <input matInput placeholder="Enter email address or Phone">
-          </mat-form-field>
+            <mat-hint><a [routerLink]="['/forget-email']">Forgot email?</a></mat-hint>
+          </mat-form-field>   
     </div>
+   
+   
     <div class="password-field">
         <mat-form-field class="password-input" appearance="outline">
             <mat-label >Password</mat-label>
             <input matInput placeholder="Enter your password">
-            <mat-hint><a href="#">Forgot Password?</a></mat-hint>
+            <mat-hint><a [routerLink]="['/forgot-password']">Forgot Password?</a></mat-hint>
           </mat-form-field>
           
     </div>    
+   
     <div class="bottom-options">
         <div class="create-account-link">
-            <a class="create-link" href="#">Create Account</a>
+            <a [routerLink]="['/registration']">Create Account</a>
         </div>
         <div class="next">
             <button class="next-button" mat-raised-button>Next</button>

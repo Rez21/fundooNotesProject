@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,11 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ForgetEmailComponent } from './components/forget-email/forget-email.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegistrationComponent,
     SignInComponent,
     ForgetEmailComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    FundooLogoComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

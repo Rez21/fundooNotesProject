@@ -1,0 +1,49 @@
+.forgot-signIn-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 0.5px solid #b8b3b3;
+        border-radius: 5px;
+        min-height: 500px;
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-right: 35%;
+}
+.logo{
+    margin-top: 40px;
+    text-align: center;
+}
+.head-line{
+    margin-bottom: 20px;
+    text-align: center;  
+}
+.sign-in-head{
+    text-align: center;
+}
+.next-button{
+    background-color: #1a73e8;
+    color: aliceblue;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    height: 40px;
+    font-weight: bold;
+    padding: 5px;
+}
+.bottom-options{
+    margin-left: 50px;
+    display: flex;
+    align-content: flex-end;
+}
+h2{
+    font-weight: 400;
+    font-size: 24px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+}
+h3{
+    font-weight: 400;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+}
+mat-form-field{
+    width: 400px;
+}
