@@ -85,3 +85,17 @@ p{
 .create-account-link{
     font-weight: 450;
 }
+
+@media screen and (max-width:1300px){
+    mat-form-field{
+        width: 400px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .main-signIn-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
+}

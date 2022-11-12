@@ -1,38 +1,35 @@
 <div class="main-signIn-container">
     <div class="logo">
-        <app-fundoo-logo></app-fundoo-logo>    
+        <app-fundoo-logo></app-fundoo-logo>
     </div>
     <div class="sign-in-head">
         <h2>Sign in</h2>
-        
     </div>
     <div class="head-line">
         <h3>Use your Fundoo Account</h3>
     </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="mail-phone-field">
         <mat-form-field class="email-phone-input" appearance="outline">
-            <mat-label >Email or Phone</mat-label>
-            <input matInput placeholder="Enter email address or Phone">
+            <mat-label>Email or Phone</mat-label>
+            <input formControlName="email" matInput placeholder="Enter email address or Phone">
             <mat-hint><a [routerLink]="['/forget-email']">Forgot email?</a></mat-hint>
-          </mat-form-field>   
+        </mat-form-field>
     </div>
-   
-   
     <div class="password-field">
         <mat-form-field class="password-input" appearance="outline">
-            <mat-label >Password</mat-label>
-            <input matInput placeholder="Enter your password">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput placeholder="Enter your password">
             <mat-hint><a [routerLink]="['/forgot-password']">Forgot Password?</a></mat-hint>
-          </mat-form-field>
-          
-    </div>    
-   
+        </mat-form-field>
+    </div>
     <div class="bottom-options">
         <div class="create-account-link">
             <a [routerLink]="['/registration']">Create Account</a>
         </div>
         <div class="next">
             <button class="next-button" mat-raised-button>Next</button>
-        </div>    
+        </div>
     </div>
+    </form>
 </div>

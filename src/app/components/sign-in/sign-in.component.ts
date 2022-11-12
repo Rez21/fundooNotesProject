@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
+import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -6,10 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+  loginForm!: FormGroup;
+  submitted = false;
+ 
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private user:UserService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      service: ['advanced', Validators.required]
+   });
+  }
+  get f() { return this.loginForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.loginForm.valid) {
+      console.log("User login successfully");
+      let payload = {
+        email: this.loginForm.value.email,
+        password: this.loginForm.value.password,
+        service: this.loginForm.value.service
+      }
+      this.user.login(payload).subscribe((response: any) => {
+        console.log(response)
+      }
+      )
+    }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
 
 }
