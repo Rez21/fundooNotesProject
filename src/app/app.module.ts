@@ -8,6 +8,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {HttpClientModule} from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule, MatNavList} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +23,11 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FundooLogoComponent } from './components/fundoo-logo/fundoo-logo.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CreateNotesComponent } from './components/create-notes/create-notes.component';
+import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
 
 
 
@@ -30,7 +40,13 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     ForgetEmailComponent,
     PasswordResetComponent,
     FundooLogoComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    DashboardComponent,
+    CreateNotesComponent,
+    GetAllNotesComponent,
+    DisplayNotesComponent,
+    IconsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +56,12 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     MatInputModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule, 
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

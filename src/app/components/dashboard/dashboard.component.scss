@@ -1,0 +1,144 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 16px;
+  color: #5f6368;
+  opacity: 1;
+  font-family: sans-serif;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+.example-toolbar{
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+.search-container{
+  display: flex;
+  flex-direction: row;
+  margin: 85px;
+  // background-color: #c2c2bd;
+  border-radius: 20px;
+  height: 67%;
+  padding-right: 28px;
+  background-color: #efe9e9;
+  vertical-align: middle;
+  
+}
+.search-field{
+  margin-bottom: 7px;
+  width: 500px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  font-variant-ligatures: none;
+  background: transparent;
+  border: none;
+  font: normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif;
+}
+.s-btn img{
+  border: none;
+  background: transparent;
+  height: 40px;
+  margin-bottom: -22px;
+
+}
+
+.btn-container{
+  display: flex;
+  flex-direction: row;
+  margin: 21px;
+}
+.refresh{
+  margin-right: 30px;
+  // background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjMDAwIj4KICA8cGF0aCBkPSJNMTMgOXYyaDdWNGgtMnYyLjc0QzE2LjUzIDUuMDcgMTQuNCA0IDEyIDRjLTIuMjEgMC00LjIxLjktNS42NiAyLjM0UzQgOS43OSA0IDEyYzAgNC40MiAzLjU4IDggOCA4IDIuMjEgMCA0LjIxLS45IDUuNjYtMi4zNGwtMS40Mi0xLjQyQTUuOTggNS45OCAwIDAgMSAxMiAxOGMtMy4zMSAwLTYtMi42OS02LTYgMC0xLjY1LjY3LTMuMTUgMS43Ni00LjI0QTUuOTggNS45OCAwIDAgMSAxMiA2YTYuMDEgNi4wMSAwIDAgMSA1LjE5IDNIMTN6Ii8+Cjwvc3ZnPgo=);
+  // -webkit-background-size: 24px 24px;
+  // background-size: 24px 24px;
+  // -webkit-box-sizing: border-box;
+  // box-sizing: border-box;
+  // height: 48px;
+  // left: 0;
+  // position: absolute;
+  // top: 0;
+  // width: 48px;
+}
+.listV{
+  margin-right: 30px;
+}
+.set{
+  margin-right: 30px;
+}
+.apps{
+  margin-right: 30px;
+}
+.menu-btn{
+  margin: 25px;
+}
+.logo{
+  width: 52px;
+  height: 52px;
+}
+.srch{
+width: 600px;
+}
+.note{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+// background-color: #feefc3;
+}
+.rem{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+}
+.label{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+}
+.arcv{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+}
+.trash{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+}
+@media (min-width:360px) {
+.example-toolbar{
+width: 100%;
+}
+.example-sidenav-container{
+width: 100%;
+}
+}

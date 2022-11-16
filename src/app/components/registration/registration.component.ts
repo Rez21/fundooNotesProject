@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      service: ['advanced', Validators.required]
+      service: "advanced"
    }, {
        validator: MustMatch('password', 'confirmPassword')
    });

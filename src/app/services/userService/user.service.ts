@@ -28,5 +28,14 @@ export class UserService {
     }
     return this.httpService.postService("/user/login", payload, false, header)
   }
+
+  forgotPassword(dataload: any){
+    let header = {
+      Headers:new HttpHeaders({
+        'Content-type' : 'application/json',
+      })
+    }
+    return this.httpService.postService("/user/reset", dataload   , false, header)
+  }
 }
 

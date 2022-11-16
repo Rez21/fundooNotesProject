@@ -13,13 +13,13 @@
         <mat-form-field class="email-phone-input" appearance="outline">
             <mat-label>Email or Phone</mat-label>
             <input formControlName="email" matInput placeholder="Enter email address or Phone">
-            <mat-hint><a [routerLink]="['/forget-email']">Forgot email?</a></mat-hint>
+            <mat-hint><a routerLink="/forget-email">Forgot email?</a></mat-hint>
         </mat-form-field>
     </div>
     <div class="password-field">
         <mat-form-field class="password-input" appearance="outline">
             <mat-label>Password</mat-label>
-            <input formControlName="password" matInput placeholder="Enter your password">
+            <input type="password" formControlName="password" matInput placeholder="Enter your password">
             <mat-hint><a [routerLink]="['/forgot-password']">Forgot Password?</a></mat-hint>
         </mat-form-field>
     </div>
@@ -28,7 +28,7 @@
             <a [routerLink]="['/registration']">Create Account</a>
         </div>
         <div class="next">
-            <button class="next-button" mat-raised-button>Next</button>
+            <button [routerLink]="['/dashboard']" class="next-button" mat-raised-button (click)="onSubmit()">Next</button>
         </div>
     </div>
     </form>

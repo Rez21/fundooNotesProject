@@ -18,7 +18,7 @@ export class SignInComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      service: ['advanced', Validators.required]
+      service: ['advance', Validators.required]
    });
   }
   get f() { return this.loginForm.controls; }
@@ -35,6 +35,7 @@ export class SignInComponent implements OnInit {
       }
       this.user.login(payload).subscribe((response: any) => {
         console.log(response)
+        localStorage.setItem('token',response.id)
       }
       )
     }

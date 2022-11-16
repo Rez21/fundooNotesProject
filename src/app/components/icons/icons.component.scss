@@ -1,0 +1,11 @@
+.icon-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1px;
+}
+.icon button{
+    margin-right: 20px;
+    border: none;
+    background-color: white;
+}

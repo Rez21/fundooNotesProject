@@ -1,0 +1,85 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+        <div mat-icon-button (click)="snav.toggle()" class="menu-btn" role="button">
+            <mat-icon>
+                <svg focusable="false" viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg>
+            </mat-icon>
+        </div>
+        <div class="logo">
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png">
+        </div>
+        <h1 class="example-app-name">Fundoo</h1>
+
+        <div class="search-container">
+            <div class="s-btn" type="button">
+                <img src="../../../assets/search.svg">
+            </div>
+            <div class="srch">
+                <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
+                    role="combobox" aria-hidden="false">
+            </div>
+            
+      
+        </div>
+        <div class="btn-container">
+            <div role="button" data-tooltip-text="Refresh" aria-label="Refresh" style="user-select: none;"
+                class="refresh">
+                <img src="../../../assets/refresh.svg" alt="">
+            </div>
+            <div role="button" data-tooltip-text="List view" aria-label="List view" style="user-select: none;"
+                class="listV">
+                <img src="../../../assets/list view.svg" alt="">
+            </div>
+            <div role="button" data-tooltip-text="Settings" aria-label="Settings" style="user-select: none;"
+                class="set">
+                <img src="../../../assets/settings.svg" alt="">
+            </div>
+        </div>
+        <div class="apps">
+            <a href="https://www.google.co.in/intl/en/about/products" aria-expanded="false" tabindex="0" role="button"
+                class="products">
+                <img src="../../../assets/apps.svg" alt="">
+            </a>
+        </div>
+        <div>
+            <img src="../../../assets/person.svg" alt="">
+        </div>
+    </mat-toolbar>
+
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+
+            <mat-nav-list>
+                <div class="note" role="button" style="user-select: none;">
+                    <img src="../../../assets/lightbulb.svg" alt="">
+                    <a mat-list-item routerLink="/dashboard/notes">Notes</a>
+                </div>
+                <div class="rem">
+                    <img src="../../../assets/Remind me.svg" alt="">
+                    <a mat-list-item routerLink="">Reminders</a>
+                </div>
+                <div class="label">
+                    <img src="../../../assets/edit.svg" alt="">
+                    <a mat-list-item routerLink=".">Edit labels</a>
+                </div>
+                <div class="arcv">
+                    <img src="../../../assets/archive.svg" alt="">
+                    <a mat-list-item routerLink=".">Archive</a>
+                </div>
+                <div class="trash">
+                    <img src="../../../assets/delete.svg" alt="">
+                    <a mat-list-item routerLink=".">Trash</a>
+                </div>
+            </mat-nav-list>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <app-get-all-notes></app-get-all-notes>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
