@@ -8,18 +8,18 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 
+
 const routes: Routes = [
-  {path:'', component: RegistrationComponent},
+  {path:'', redirectTo:"/sign-in",pathMatch:'full'},
+  // {path:'', component: RegistrationComponent},
   {path:'registration', component: RegistrationComponent},
   {path:'sign-in', component: SignInComponent},
   {path:'forget-email', component: ForgetEmailComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'password-reset', component: PasswordResetComponent},
   {path:'dashboard', component:DashboardComponent,
-  children: [{path:'notes',component: GetAllNotesComponent}]
+      children: [{path:'notes',component: GetAllNotesComponent}]
 },
-
-
 ];
 
 @NgModule({

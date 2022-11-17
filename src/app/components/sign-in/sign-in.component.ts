@@ -8,18 +8,22 @@ import { UserService } from 'src/app/services/userService/user.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+
   loginForm!: FormGroup;
   submitted = false;
- 
+  
 
-  constructor(private formBuilder: FormBuilder, private user:UserService) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService ) { }
 
   ngOnInit() {
+    
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      service: ['advance', Validators.required]
+      service: ['advance', Validators.required],
    });
+    
+
   }
   get f() { return this.loginForm.controls; }
 
@@ -33,10 +37,12 @@ export class SignInComponent implements OnInit {
         password: this.loginForm.value.password,
         service: this.loginForm.value.service
       }
+     
       this.user.login(payload).subscribe((response: any) => {
         console.log(response)
         localStorage.setItem('token',response.id)
       }
+      
       )
     }
 
