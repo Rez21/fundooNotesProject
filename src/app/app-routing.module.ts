@@ -7,6 +7,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path:'forget-email', component: ForgetEmailComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'password-reset', component: PasswordResetComponent},
-  {path:'dashboard', component:DashboardComponent,
+  {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
       children: [{path:'notes',component: GetAllNotesComponent}]
 },
 ];

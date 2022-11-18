@@ -28,6 +28,7 @@ import { CreateNotesComponent } from './components/create-notes/create-notes.com
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { AuthguardServiceService } from './services/authguardService/authguard-service.service';
 
 
 
@@ -64,7 +65,9 @@ import { IconsComponent } from './components/icons/icons.component';
     MatIconModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

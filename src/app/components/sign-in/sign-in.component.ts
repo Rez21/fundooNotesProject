@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
 
@@ -22,7 +24,8 @@ export class SignInComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: ['advance', Validators.required],
    });
-    
+
+   
 
   }
   get f() { return this.loginForm.controls; }
@@ -41,6 +44,7 @@ export class SignInComponent implements OnInit {
       this.user.login(payload).subscribe((response: any) => {
         console.log(response)
         localStorage.setItem('token',response.id)
+        localStorage.setItem('User',response.user)
       }
       
       )
