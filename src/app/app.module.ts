@@ -13,6 +13,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule, MatNavList} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu'
 
 
 import { AppComponent } from './app.component';
@@ -29,6 +30,9 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { AuthguardServiceService } from './services/authguardService/authguard-service.service';
+import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
+import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 
 
 
@@ -48,6 +52,9 @@ import { AuthguardServiceService } from './services/authguardService/authguard-s
     GetAllNotesComponent,
     DisplayNotesComponent,
     IconsComponent,
+    ArchiveNotesComponent,
+    TrashNotesComponent,
+    UpdateNotesComponent,
     
   ],
   imports: [
@@ -63,7 +70,8 @@ import { AuthguardServiceService } from './services/authguardService/authguard-s
     MatToolbarModule,
     MatListModule, 
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule
   ],
   providers: [
     AuthguardServiceService

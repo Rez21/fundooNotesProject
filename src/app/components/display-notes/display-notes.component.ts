@@ -10,10 +10,9 @@ export class DisplayNotesComponent implements OnInit {
   @Input() recieveNoteList: any;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     console.log(this.recieveNoteList);
   }
-
-
+  
 }

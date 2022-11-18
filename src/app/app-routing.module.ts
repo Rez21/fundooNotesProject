@@ -11,16 +11,18 @@ import { AuthenticationGuard } from './authentication.guard';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:"/sign-in",pathMatch:'full'},
+ 
   // {path:'', component: RegistrationComponent},
   {path:'registration', component: RegistrationComponent},
   {path:'sign-in', component: SignInComponent},
   {path:'forget-email', component: ForgetEmailComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'password-reset', component: PasswordResetComponent},
+  {path:'', redirectTo:"/sign-in",pathMatch:'full'},
   {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
-      children: [{path:'notes',component: GetAllNotesComponent}]
-},
+      children: [{path:'notes',component: GetAllNotesComponent}],
+}
+
 ];
 
 @NgModule({

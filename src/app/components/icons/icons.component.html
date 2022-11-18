@@ -13,6 +13,13 @@
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
     </div >
     <div class="icon">
-        <button mat-icon-button matTooltip="Archive"> <img src="../../../assets/archive.svg"></button>
+        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
+    </div>
+    <div class="icon">
+        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt=""></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="trash()">Delete</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
     </div>
 </div>
