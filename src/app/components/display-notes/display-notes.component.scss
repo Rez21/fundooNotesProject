@@ -1,15 +1,16 @@
 .head{
     display: flex;
     flex-wrap: wrap;
+    margin-left: 130px;
 }
 .notes {
-    margin: 28px;
-    margin-left: 100px;
+    margin: 10px;
     border: 1px solid rgb(209, 202, 202);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+   
     background-color: white;
 }
 .notes:hover{
@@ -20,9 +21,12 @@
     margin-top: 10px;
     font-size: medium;
     font-weight: 400;
-   }
+}
  
-   .description{
-      margin-left: 18px;
-      font-size: medium;
-   }
+.description{
+    margin-left: 18px;
+    font-size: medium;
+ }
+ .note-icons{
+    align-items: baseline;
+ }

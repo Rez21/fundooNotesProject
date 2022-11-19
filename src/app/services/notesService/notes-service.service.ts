@@ -71,5 +71,15 @@ export class NoteService {
     }
     return this.httpService.getService("/notes/getTrashNotesList",true,header)
   }
+
+  getAllArchiveNotes(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.getService("/notes/getArchiveNotesList",true,header)
+  }
 }
 

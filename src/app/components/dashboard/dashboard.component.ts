@@ -45,4 +45,7 @@ export class DashboardComponent implements OnInit {
   trashNote(){
     this.router.navigateByUrl("/dashboard/trash-notes")
   }
+  archiveNotes(){
+    this.router.navigateByUrl("/dashboard/archive-notes")
+  }
 }

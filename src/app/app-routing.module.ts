@@ -22,7 +22,8 @@ const routes: Routes = [
   {path:'', redirectTo:"/sign-in",pathMatch:'full'},
   {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
       children: [{path:'notes',component: GetAllNotesComponent},
-                 {path:'trash-notes',component: TrashNotesComponent}],     
+                 {path:'trash-notes',component: TrashNotesComponent},
+                 {path:'archive-notes',component: TrashNotesComponent}],     
 }
 ];
 
