@@ -19,7 +19,7 @@ export class GetAllNotesComponent implements OnInit {
     this.note.getAllNote().subscribe((response:any)=>{
       console.log(response);
       this.NoteList=response.data.data
-      console.log(this.NoteList);
+      console.log(this.NoteList);// gives list in console
     })
   }
 

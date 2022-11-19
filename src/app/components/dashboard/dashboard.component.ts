@@ -42,4 +42,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl("/sign-in")
     console.log("Logout Successfully..!!!");
   }
+  trashNote(){
+    this.router.navigateByUrl("/dashboard/trash-notes")
+  }
 }
