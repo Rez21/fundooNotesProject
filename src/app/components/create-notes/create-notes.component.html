@@ -5,7 +5,7 @@
     </div>
     <div class="take-note"  *ngIf="!isShow || isShow" (click)="Show()">
         <div *ngIf="!isShow || isShow">
-            <input class="note-field" type="text" placeholder="Take a note..." (ngModel)="description">
+            <input class="note-field" type="text" placeholder="Take a note..." [(ngModel)]="description">
         </div>
         <div *ngIf="!isShow" class="icons">
             <button mat-icon-button matTooltip="New list">

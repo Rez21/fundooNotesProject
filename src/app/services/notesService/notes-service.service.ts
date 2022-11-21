@@ -52,14 +52,14 @@ export class NoteService {
     return this.httpService.postService("/notes/archiveNotes", payload, true, header)
   }
   // update
-  updateNote(payload:any){
+  updateNote(data:any){
     let header ={
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': this.token
       })
     }
-    return this.httpService.postService("/notes/updateNotes", payload, true, header)
+    return this.httpService.postService("/notes/updateNotes", data, true, header)
   }
 
   getAllTrashNote(){

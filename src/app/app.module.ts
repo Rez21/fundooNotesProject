@@ -33,6 +33,8 @@ import { AuthguardServiceService } from './services/authguardService/authguard-s
 import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
 import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -54,7 +56,7 @@ import { UpdateNotesComponent } from './components/update-notes/update-notes.com
     IconsComponent,
     ArchiveNotesComponent,
     TrashNotesComponent,
-    UpdateNotesComponent,
+    UpdateNotesComponent
     
   ],
   imports: [
@@ -71,7 +73,8 @@ import { UpdateNotesComponent } from './components/update-notes/update-notes.com
     MatListModule, 
     MatIconModule,
     FormsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     AuthguardServiceService
