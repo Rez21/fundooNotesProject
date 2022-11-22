@@ -22,6 +22,9 @@
         <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
     </div>
     <div class="icon">
+        <button mat-icon-button matTooltip="Unarchive" (click)="unarchive()"> <img src="../../../assets/unarchive.svg"></button>
+    </div>
+    <div class="icon">
         <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt=""></button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="trash()">Delete</button>

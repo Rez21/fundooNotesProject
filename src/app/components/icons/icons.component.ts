@@ -23,11 +23,33 @@ export class IconsComponent implements OnInit {
       console.log(res);
     })
   }
+  restore() {
+    let payload = {
+      noteIdList: [this.noteCard.id],
+      isDeleted: false
+    }
+    console.log(payload);
+    this.note.trashNote(payload).subscribe((res: any) => {
+      console.log(res);
+    })
+  }
   //Archive
   archive(){
     let payload = {
       noteIdList: [this.noteCard.id],
       isArchived: true,
+    }
+    console.log(payload);
+    this.note.archiveNote(payload).subscribe((res: any) => {
+      console.log(res);
+    })
+  }
+
+  //unarchive
+  unarchive(){
+    let payload = {
+      noteIdList: [this.noteCard.id],
+      isArchived: false,
     }
     console.log(payload);
     this.note.archiveNote(payload).subscribe((res: any) => {

@@ -19,4 +19,6 @@ export class TrashNotesComponent implements OnInit {
       this.TrashNoteList= response.data.data
     })
   }
+  
+
 }
