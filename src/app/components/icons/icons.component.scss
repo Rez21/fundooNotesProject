@@ -7,6 +7,20 @@
 .icon button{
     margin-right: 10px;
     border: none;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
+}
+.colorboxSetting {
+   
+    background-color: transparent;
+    border-radius: 20px;
+    margin: auto;
+    border: 0.2px solid rgb(229, 224, 224);
+}
+
+.bg-color button {
+    height: 30px;
+    width: 30px;
+    display: block;
+    border-radius: 100px;
 }

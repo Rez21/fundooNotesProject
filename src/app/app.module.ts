@@ -13,7 +13,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule, MatNavList} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { MatMenuModule } from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule} from '@angular/material/tooltip';
 
 
 import { AppComponent } from './app.component';
@@ -74,7 +75,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     FormsModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [
     AuthguardServiceService

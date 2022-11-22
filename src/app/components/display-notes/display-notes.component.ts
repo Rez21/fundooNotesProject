@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AUTO_STYLE } from '@angular/animations';
 import {MatDialog} from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 
@@ -10,10 +11,11 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 export class DisplayNotesComponent implements OnInit {
 
   @Input() recieveNoteList: any;
+  title:any;
+  description:any;
   constructor(public dialog:MatDialog) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void{
     console.log(this.recieveNoteList);
   }
   openDialog(note:any){
@@ -25,6 +27,8 @@ export class DisplayNotesComponent implements OnInit {
 
     });
     dialogRef.afterClosed().subscribe(result=>{
+      this.title;
+      this.description;
       console.log('The dialog was closed',result);
     })  
 }
