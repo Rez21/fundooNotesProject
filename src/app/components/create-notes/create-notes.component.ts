@@ -20,7 +20,7 @@ export class CreateNotesComponent implements OnInit {
     this.isShow = true;
   }
   Close(){
-    this.isShow=false;
+    
     this.isShow = false;
     if ((this.title != null && this.title != "") || (this.description != null && this.description != "")) {
       console.log(this.title, this.description)

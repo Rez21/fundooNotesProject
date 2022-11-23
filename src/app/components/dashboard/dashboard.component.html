@@ -43,7 +43,7 @@
                 <img src="../../../assets/apps.svg" alt="">
             </a>
         </div>
-        <div>
+        <div (click)="Logout()">
             <img src="../../../assets/person.svg" alt="">
         </div>
     </mat-toolbar>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="rem">
                     <img src="../../../assets/Remind me.svg" alt="">
-                    <a mat-list-item routerLink="">Reminders</a>
+                    <a mat-list-item routerLink=".">Reminders</a>
                 </div>
                 <div class="label">
                     <img src="../../../assets/edit.svg" alt="">
@@ -68,18 +68,19 @@
                 </div>
                 <div class="arcv">
                     <img src="../../../assets/archive.svg" alt="">
-                    <a mat-list-item routerLink=".">Archive</a>
+                    <a mat-list-item (click)="archiveNotes()">Archive</a>
                 </div>
                 <div class="trash">
                     <img src="../../../assets/delete.svg" alt="">
-                    <a mat-list-item routerLink=".">Trash</a>
+                    <a mat-list-item  (click)="trashNote()">Trash</a>
                 </div>
             </mat-nav-list>
 
         </mat-sidenav>
 
         <mat-sidenav-content>
-          <app-get-all-notes></app-get-all-notes>
+           <router-outlet></router-outlet> 
+
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

@@ -35,7 +35,7 @@ export class UserService {
         'Content-type' : 'application/json',
       })
     }
-    return this.httpService.postService("/user/reset", dataload   , false, header)
+    return this.httpService.postService("/user/reset", dataload, false, header)
   }
 }
 

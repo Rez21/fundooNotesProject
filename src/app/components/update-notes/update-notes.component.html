@@ -1,0 +1,11 @@
+
+<div class="take-note">  
+        <input class="title" placeholder="Title" [(ngModel)]="title">
+        <input class="note-field" type="text" placeholder="Take a note..." [(ngModel)]="description">
+</div>
+<div class="close">
+    <div>
+        <app-icons></app-icons>
+    </div>
+    <button class="closeButton" (click)="closeDialog()" mat-raised-button>Close</button>
+</div>

@@ -7,12 +7,31 @@
         <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="BackroundColor"> <img src="../../../assets/backColor.svg"></button>
+        <button mat-icon-button matTooltip="BackroundColor" [matMenuTriggerFor]="color"> <img src="../../../assets/backColor.svg"></button>
+        <mat-menu #color="matMenu">
+            <div class="bg-color" *ngFor="let color of colors">
+                <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
+                    [style.background]="color?.code" (click)="colorChange(color.code)"></button>
+            </div>
+        </mat-menu>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
     </div >
     <div class="icon">
-        <button mat-icon-button matTooltip="Archive"> <img src="../../../assets/archive.svg"></button>
+        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
+    </div>
+    <div class="icon">
+        <button mat-icon-button matTooltip="Unarchive" (click)="unarchive()"> <img src="../../../assets/unarchive.svg"></button>
+    </div>
+    <div class="icon">
+        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt=""></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="trash()">Delete</button>
+            <button mat-menu-item>Add Lable</button>
+            <button mat-menu-item>Add Drawing</button>
+            <button mat-menu-item>Make a copy</button>
+            <button mat-menu-item>Show checkboxes</button>
+          </mat-menu>
     </div>
 </div>

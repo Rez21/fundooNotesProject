@@ -1,5 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
@@ -13,16 +16,17 @@ export class SignInComponent implements OnInit {
   submitted = false;
   
 
-  constructor(private formBuilder: FormBuilder,private user:UserService ) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router) { }
 
   ngOnInit() {
     
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      service: ['advance', Validators.required],
+      service: "advance",
    });
-    
+
+   
 
   }
   get f() { return this.loginForm.controls; }
@@ -38,15 +42,13 @@ export class SignInComponent implements OnInit {
         service: this.loginForm.value.service
       }
      
-      this.user.login(payload).subscribe((response: any) => {
-        console.log(response)
-        localStorage.setItem('token',response.id)
-      }
-      
+      this.user.login(payload).subscribe((response:any) => {
+        console.log(response);
+        localStorage.setItem('token',response.id); 
+        this.router.navigateByUrl('/dashboard/notes')
+      }   
       )
     }
-
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
-
 }

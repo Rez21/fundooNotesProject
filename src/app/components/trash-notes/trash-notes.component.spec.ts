@@ -1,20 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { TrashNotesComponent } from './trash-notes.component';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('TrashNotesComponent', () => {
+  let component: TrashNotesComponent;
+  let fixture: ComponentFixture<TrashNotesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ TrashNotesComponent ]
     })
     .compileComponents();
-    fixture = TestBed.createComponent(DashboardComponent);
+
+    fixture = TestBed.createComponent(TrashNotesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

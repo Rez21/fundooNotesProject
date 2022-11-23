@@ -1,20 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { ArchiveNotesComponent } from './archive-notes.component';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('ArchiveNotesComponent', () => {
+  let component: ArchiveNotesComponent;
+  let fixture: ComponentFixture<ArchiveNotesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ ArchiveNotesComponent ]
     })
     .compileComponents();
-    fixture = TestBed.createComponent(DashboardComponent);
+
+    fixture = TestBed.createComponent(ArchiveNotesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

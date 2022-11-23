@@ -1,13 +1,14 @@
 
 <div class="head">
-    <div class="notes" *ngFor='let note of recieveNoteList'
-        style="width: 280px; border:1px solid rgb(198, 195, 195); min-height:fit-content; max-height:600px">
-        <div class="title">
-            <p>{{note.title}}</p>
+    <div class="notes" *ngFor='let note of recieveNoteList' [style.background]="note.color">
+        <div class="title" >
+            <p (click)="openDialog(note)">{{note.title}}</p>
         </div>
-        <div class="description">
-            <p>{{note.description}}</p>
+        <div class="descriptiodata">
+            <p (click)="openDialog(note)">{{note.description}}</p>
         </div>
-        <app-icons></app-icons>
+        <div class="note-icons">
+        <app-icons [noteCard]="note"></app-icons>
+        </div>
     </div>
 </div>

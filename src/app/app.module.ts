@@ -13,6 +13,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule, MatNavList} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule} from '@angular/material/tooltip';
 
 
 import { AppComponent } from './app.component';
@@ -28,6 +30,12 @@ import { CreateNotesComponent } from './components/create-notes/create-notes.com
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { AuthguardServiceService } from './services/authguardService/authguard-service.service';
+import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
+import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -47,6 +55,9 @@ import { IconsComponent } from './components/icons/icons.component';
     GetAllNotesComponent,
     DisplayNotesComponent,
     IconsComponent,
+    ArchiveNotesComponent,
+    TrashNotesComponent,
+    UpdateNotesComponent
     
   ],
   imports: [
@@ -62,9 +73,14 @@ import { IconsComponent } from './components/icons/icons.component';
     MatToolbarModule,
     MatListModule, 
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
