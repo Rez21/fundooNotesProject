@@ -90,5 +90,15 @@ export class NoteService {
   }
   return this.httpService.postService("/notes/changesColorNotes", data, true, header)
   }
+  permanentDelete(payload:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/notes/deleteForeverNotes",payload, true, header)
+  }
 }
 

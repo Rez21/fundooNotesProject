@@ -10,7 +10,7 @@ export class UserService {
   constructor(private httpService: HttpService) { }
 
   registration(reqdata: any){
-    // console.log(reqdata);
+     console.log(reqdata);
 
     let header = {
       Headers:new HttpHeaders({

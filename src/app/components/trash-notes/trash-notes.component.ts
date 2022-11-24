@@ -17,8 +17,14 @@ export class TrashNotesComponent implements OnInit {
   getTrashNotes(){
     this.note.getAllTrashNote().subscribe((response: any)=>{
       this.TrashNoteList= response.data.data
+      console.log(this.TrashNoteList)
+      this.TrashNoteList=this.TrashNoteList.filter((result:any)=>{
+        return result.isArchived==false && result.isDeleted==true;
+      })
     })
   }
-  
-
+   updateEvent($event:any){
+     this.getTrashNotes();
+   }
 }
+

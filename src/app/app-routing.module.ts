@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
+import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
       children: [{path:'notes',component: GetAllNotesComponent},
                  {path:'trash-notes',component: TrashNotesComponent},
-                 {path:'archive-notes',component: TrashNotesComponent}],     
+                 {path:'archive-notes',component: ArchiveNotesComponent}]     
 }
 ];
 

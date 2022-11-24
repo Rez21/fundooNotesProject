@@ -8,7 +8,7 @@
             <p (click)="openDialog(note)">{{note.description}}</p>
         </div>
         <div class="note-icons">
-        <app-icons [noteCard]="note"></app-icons>
+        <app-icons [noteCard]="note" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
         </div>
     </div>
 </div>

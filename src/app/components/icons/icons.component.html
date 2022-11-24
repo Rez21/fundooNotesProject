@@ -1,5 +1,5 @@
 
-<div class="icon-container">
+<div class="icon-container" *ngIf="this.noteCard.isDeleted==false">
     <div class="icon">
         <button mat-icon-button matTooltip="Reminder"> <img src="../../../assets/remind.svg"></button>
     </div>
@@ -8,7 +8,7 @@
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="BackroundColor" [matMenuTriggerFor]="color"> <img src="../../../assets/backColor.svg"></button>
-        <mat-menu #color="matMenu">
+         <mat-menu #color="matMenu">
             <div class="bg-color" *ngFor="let color of colors">
                 <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
                     [style.background]="color?.code" (click)="colorChange(color.code)"></button>
@@ -17,13 +17,15 @@
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
-    </div >
-    <div class="icon">
+    </div>
+
+    <div class="icon" *ngIf="isDisplayNotesComponent">
         <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
     </div>
-    <div class="icon">
-        <button mat-icon-button matTooltip="Unarchive" (click)="unarchive()"> <img src="../../../assets/unarchive.svg"></button>
+    <div class="icon" *ngIf="isArchiveNotesComponent">
+        <button mat-icon-button matTooltip="Unarchive" (click)="unArchive()"> <img src="../../../assets/unarchive.svg"></button>
     </div>
+   
     <div class="icon">
         <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt=""></button>
         <mat-menu #menu="matMenu">
@@ -34,4 +36,10 @@
             <button mat-menu-item>Show checkboxes</button>
           </mat-menu>
     </div>
+    
+</div>
+<div class="restore" *ngIf="this.noteCard.isDeleted==true">
+    <button mat-icon-button matTooltip="Restore" (click)="restore()"> <img src="../../../assets/Restore.svg"></button>
+    <button mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)"> <img
+            src="../../../assets/delete-permenent.svg"></button>
 </div>

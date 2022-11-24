@@ -44,7 +44,7 @@ onSubmit() {
       service: this.registerForm.value.service
     }
       this.user.registration(reqdata).subscribe((response: any)=>{
-          console.log(response);
+          console.log(response)
       })
   }
 }

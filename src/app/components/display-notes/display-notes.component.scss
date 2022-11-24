@@ -4,13 +4,13 @@
     margin-left: 130px;
 }
 .notes {
+    max-width: 310px;
     margin: 10px;
     border: 1px solid rgb(209, 202, 202);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-   
     background-color: white;
 }
 .notes:hover{
@@ -24,6 +24,7 @@
 }
  
 .descriptiodata{
+    max-width: 295px;
     margin-left: 18px;
     font-size: medium;
  }

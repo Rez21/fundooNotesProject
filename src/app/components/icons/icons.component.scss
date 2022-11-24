@@ -21,4 +21,17 @@
     width: 30px;
     display: block;
     border-radius: 100px;
+    padding: 10px;
+}
+.restore{
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+    margin-left: 180px;
+}
+.restore button{
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
