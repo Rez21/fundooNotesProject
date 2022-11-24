@@ -111,6 +111,11 @@ padding-left: 15px;
 a{
  margin-right: 30px;
 }
+.class-name{
+  background-color: rgb(239, 164, 164);
+  border: 0.1px solid #b1b1b1;
+  border-radius:   0 100px  100px 0;
+}
 
 @media (min-width:360px) {
 .example-toolbar{
