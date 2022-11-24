@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
+import { DataServiceService } from 'src/app/services/dataService/data-service.service';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router:Router) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router:Router, private dataService:DataServiceService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -48,4 +49,8 @@ export class DashboardComponent implements OnInit {
   archiveNotes(){
     this.router.navigateByUrl("/dashboard/archive-notes")
   }
+  searchNote(event:any){
+    this.dataService.sendMessage(event.target.value)
+  }
+
 }

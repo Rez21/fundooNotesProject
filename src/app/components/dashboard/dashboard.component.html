@@ -18,7 +18,7 @@
             </div>
             <div class="srch">
                 <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
-                    role="combobox" aria-hidden="false">
+                    role="combobox" aria-hidden="false" (keyup)="searchNote($event)">
             </div>
             
       
@@ -54,25 +54,20 @@
             fixedTopGap="56">
 
             <mat-nav-list>
-                <div class="note" role="button" style="user-select: none;">
-                    <img src="../../../assets/lightbulb.svg" alt="">
-                    <a mat-list-item routerLink="/dashboard/notes">Notes</a>
+                <div class="note-title" role="button" style="user-select: none">
+                    <a mat-list-item routerLink="/dashboard/notes"><img class="nav-image" src="../../../assets/lightbulb.svg" alt="">Notes</a>
                 </div>
-                <div class="rem">
-                    <img src="../../../assets/Remind me.svg" alt="">
-                    <a mat-list-item routerLink=".">Reminders</a>
+                <div class="note-title">
+                    <a mat-list-item routerLink="."><img class="nav-image" src="../../../assets/Remind me.svg" alt="">Reminders</a>
                 </div>
-                <div class="label">
-                    <img src="../../../assets/edit.svg" alt="">
-                    <a mat-list-item routerLink=".">Edit labels</a>
+                <div class="note-title">
+                    <a mat-list-item routerLink="."><img class="nav-image" src="../../../assets/edit.svg" alt=""> Edit labels</a>
                 </div>
-                <div class="arcv">
-                    <img src="../../../assets/archive.svg" alt="">
-                    <a mat-list-item (click)="archiveNotes()">Archive</a>
+                <div class="note-title"> 
+                    <a mat-list-item (click)="archiveNotes()"><img class="nav-image" src="../../../assets/archive.svg" alt=""> Archive</a>
                 </div>
-                <div class="trash">
-                    <img src="../../../assets/delete.svg" alt="">
-                    <a mat-list-item  (click)="trashNote()">Trash</a>
+                <div class="note-title">     
+                    <a mat-list-item  (click)="trashNote()"><img class="nav-image" src="../../../assets/delete.svg" alt=""> Trash</a>
                 </div>
             </mat-nav-list>
 

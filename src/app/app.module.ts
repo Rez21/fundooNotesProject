@@ -35,6 +35,7 @@ import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.
 import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 
@@ -57,7 +58,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     IconsComponent,
     ArchiveNotesComponent,
     TrashNotesComponent,
-    UpdateNotesComponent
+    UpdateNotesComponent,
+    FilterPipe
     
   ],
   imports: [

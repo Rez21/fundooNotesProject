@@ -1,6 +1,6 @@
 
 <div class="head">
-    <div class="notes" *ngFor='let note of recieveNoteList' [style.background]="note.color">
+    <div class="notes" *ngFor='let note of recieveNoteList | filter: Search' [style.background]="note.color">
         <div class="title" >
             <p (click)="openDialog(note)">{{note.title}}</p>
         </div>

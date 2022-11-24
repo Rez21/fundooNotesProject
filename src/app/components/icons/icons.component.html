@@ -8,11 +8,13 @@
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="BackroundColor" [matMenuTriggerFor]="color"> <img src="../../../assets/backColor.svg"></button>
-         <mat-menu #color="matMenu">
+         <mat-menu   #color="matMenu"  >
+            <div class="color-options">
             <div class="bg-color" *ngFor="let color of colors">
                 <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
                     [style.background]="color?.code" (click)="colorChange(color.code)"></button>
             </div>
+        </div>
         </mat-menu>
     </div>
     <div class="icon">
