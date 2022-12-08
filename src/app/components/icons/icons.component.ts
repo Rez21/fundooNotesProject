@@ -12,6 +12,7 @@ import { TrashNotesComponent } from '../trash-notes/trash-notes.component';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
+  private datetimereminder = new Date(Date.now());
 
   constructor(private note: NoteService,private route:ActivatedRoute) { }
   @Input() noteCard: any;
@@ -127,4 +128,10 @@ export class IconsComponent implements OnInit {
       this.IconEvent.emit(res)
     })
   }
+  setReminder(){
+    let data={
+
+    }
+  }
+
 }

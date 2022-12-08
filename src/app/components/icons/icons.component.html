@@ -1,7 +1,12 @@
 
 <div class="icon-container" *ngIf="this.noteCard.isDeleted==false">
     <div class="icon">
-        <button mat-icon-button matTooltip="Reminder"> <img src="../../../assets/remind.svg"></button>
+        <button mat-icon-button matTooltip="Reminder" mat-button [matMenuTriggerFor]="reminder"> <img src="../../../assets/remind.svg"></button>
+        <mat-menu #reminder="matMenu">
+            <!-- <input [(ngModel)]="datetimereminder"
+                 [owlDateTimeTrigger]="dtPicker1" [owlDateTime]="dtPicker1">
+            <owl-date-time #dtPicker1></owl-date-time> -->
+        </mat-menu>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
