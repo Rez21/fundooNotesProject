@@ -1,5 +1,18 @@
 
-<div class="head">
+<div class="head" *ngIf="isGridView">
+    <div class="notes" *ngFor='let note of recieveNoteList | filter: Search' [style.background]="note.color">
+        <div class="title" >
+            <p (click)="openDialog(note)">{{note.title}}</p>
+        </div>
+        <div class="descriptiodata">
+            <p (click)="openDialog(note)">{{note.description}}</p>
+        </div>
+        <div class="note-icons">
+        <app-icons [noteCard]="note" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
+        </div>
+    </div>
+</div>
+<div class="head" *ngIf="!isGridView">
     <div class="notes" *ngFor='let note of recieveNoteList | filter: Search' [style.background]="note.color">
         <div class="title" >
             <p (click)="openDialog(note)">{{note.title}}</p>
