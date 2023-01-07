@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AUTO_STYLE } from '@angular/animations';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
+import { DataServiceService } from 'src/app/services/dataService/data-service.service';
 
 @Component({
   selector: 'app-display-notes',
@@ -11,25 +12,43 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 export class DisplayNotesComponent implements OnInit {
 
   @Input() recieveNoteList: any;
-  title:any;
-  description:any;
-  constructor(public dialog:MatDialog) { }
+  @Output() eventForDisplay = new EventEmitter<string>();
+  message: any;
+  title: any;
+  description: any;
+  Search = '';
+  isGridView = true;
+  gridlist: any;
+  constructor(public dialog: MatDialog, private dataService: DataServiceService) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
+    this.dataService.store.subscribe(a=>this.gridlist=a)
     console.log(this.recieveNoteList);
+    this.dataService.currentMessage.subscribe((res: any) => {
+      console.log(res)
+      this.Search = res;
+    })
+
   }
-  openDialog(note:any){
-    const dialogRef=this.dialog.open(UpdateNotesComponent,{
-      width:'50%',
-      height:'auto',
-      panelClass:"updateDialog",
-      data:note,
+  openDialog(note: any) {
+    const dialogRef = this.dialog.open(UpdateNotesComponent, {
+      //  width: '100%',
+      // height: 'auto',
+      panelClass: "updateDialog",
+      data: note,
 
     });
-    dialogRef.afterClosed().subscribe(result=>{
+    dialogRef.afterClosed().subscribe(result => {
       this.title;
       this.description;
-      console.log('The dialog was closed',result);
-    })  
-}
+      console.log('The dialog was closed', result);
+      this.eventForDisplay.emit(result)
+    })
+  }
+  recievedEventFromIcon($event: any) {
+    console.log("event from icon to display", $event);
+    this.message = $event;
+    console.log("message", this.message);
+    this.eventForDisplay.emit(this.message)
+  }
 }

@@ -18,20 +18,31 @@
             </div>
             <div class="srch">
                 <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
-                    role="combobox" aria-hidden="false">
+                    role="combobox" aria-hidden="false" (keyup)="searchNote($event)">
             </div>
-            
-      
+
         </div>
         <div class="btn-container">
             <div role="button" data-tooltip-text="Refresh" aria-label="Refresh" style="user-select: none;"
                 class="refresh">
                 <img src="../../../assets/refresh.svg" alt="">
             </div>
-            <div role="button" data-tooltip-text="List view" aria-label="List view" style="user-select: none;"
+            <!-- <div role="button" data-tooltip-text="List view" aria-label="List view" style="user-select: none;"
                 class="listV">
                 <img src="../../../assets/list view.svg" alt="">
+            </div> -->
+            <div *ngIf="!grid" class="listview">
+              
+                    <img (click)="formatListView();FormatView()" src="../../../assets/list view.svg" alt="">
+               
             </div>
+            <div *ngIf="grid" class="gridview">
+            
+                    <img (click)="formatGridView();FormatView()" class="grid-icon" src="../../../assets/menu.png" alt="">
+               
+            </div>
+
+
             <div role="button" data-tooltip-text="Settings" aria-label="Settings" style="user-select: none;"
                 class="set">
                 <img src="../../../assets/settings.svg" alt="">
@@ -44,7 +55,7 @@
             </a>
         </div>
         <div (click)="Logout()">
-            <img src="../../../assets/person.svg" alt="">
+            <img class="logout-icon" src="../../../assets/person.svg" alt="">
         </div>
     </mat-toolbar>
 
@@ -54,25 +65,20 @@
             fixedTopGap="56">
 
             <mat-nav-list>
-                <div class="note" role="button" style="user-select: none;">
-                    <img src="../../../assets/lightbulb.svg" alt="">
-                    <a mat-list-item routerLink="/dashboard/notes">Notes</a>
+                <div class="note-title" role="button" style="user-select: none">
+                    <a mat-list-item routerLink="/dashboard/notes" routerLinkActive="class-name" ><img class="nav-image" src="../../../assets/lightbulb.svg" alt="">Notes</a>
                 </div>
-                <div class="rem">
-                    <img src="../../../assets/Remind me.svg" alt="">
-                    <a mat-list-item routerLink=".">Reminders</a>
+                <div class="note-title">
+                    <a mat-list-item routerLink="." routerLinkActive="class-name"><img class="nav-image" src="../../../assets/Remind me.svg" alt="">Reminders</a>
                 </div>
-                <div class="label">
-                    <img src="../../../assets/edit.svg" alt="">
-                    <a mat-list-item routerLink=".">Edit labels</a>
+                <div class="note-title">
+                    <a mat-list-item routerLink="." routerLinkActive="class-name"><img class="nav-image" src="../../../assets/edit.svg" alt=""> Edit labels</a>
                 </div>
-                <div class="arcv">
-                    <img src="../../../assets/archive.svg" alt="">
-                    <a mat-list-item (click)="archiveNotes()">Archive</a>
+                <div class="note-title"> 
+                    <a mat-list-item (click)="archiveNotes()" routerLinkActive="class-name"><img class="nav-image" src="../../../assets/archive.svg" alt=""> Archive</a>
                 </div>
-                <div class="trash">
-                    <img src="../../../assets/delete.svg" alt="">
-                    <a mat-list-item  (click)="trashNote()">Trash</a>
+                <div class="note-title">     
+                    <a mat-list-item  (click)="trashNote()" routerLinkActive="class-name"><img class="nav-image" src="../../../assets/delete.svg" alt=""> Trash</a>
                 </div>
             </mat-nav-list>
 

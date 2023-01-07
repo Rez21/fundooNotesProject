@@ -1,2 +1,2 @@
-<app-create-notes></app-create-notes>
-<app-display-notes  [recieveNoteList]="NoteList"></app-display-notes>
+<app-create-notes (CreateEvent)="updateEvent($event)"></app-create-notes>
+<app-display-notes  [recieveNoteList]="NoteList" (eventForDisplay)="updateEvent($event)"></app-display-notes>

@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule} from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { AppComponent } from './app.component';
@@ -35,6 +36,9 @@ import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.
 import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FilterPipe } from './pipe/filter.pipe';
+import { ReminderNotesComponent } from './components/reminder-notes/reminder-notes.component';
+
 
 
 
@@ -57,7 +61,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     IconsComponent,
     ArchiveNotesComponent,
     TrashNotesComponent,
-    UpdateNotesComponent
+    UpdateNotesComponent,
+    FilterPipe,
+    ReminderNotesComponent
     
   ],
   imports: [
@@ -76,7 +82,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     MatMenuModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthguardServiceService

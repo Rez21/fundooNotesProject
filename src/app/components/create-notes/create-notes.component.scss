@@ -1,6 +1,6 @@
 .note-container{
-    border: 1px solid;
-    border-color: white;
+    border: 1px solid white;
+   
     box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
     border-radius: 12px;
     display: flex;
@@ -38,7 +38,7 @@
     margin-right: 20px;
     margin-top: 10px;
 }
-  .note-field{
+.note-field{
     min-height: 27px;
     padding: 10px 15px;
     padding-top: 0px;
@@ -72,6 +72,8 @@
     margin-right: 40px;
     padding-top:15px;
     justify-content: space-between;
+    border: none;
+    
 }
 .pin{
     opacity:0.7;
@@ -79,4 +81,12 @@
 .closeButton{
     background-color: transparent;
     border: none;
+    margin-left: 20rem;
+    
+}
+.app-icons{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
 }

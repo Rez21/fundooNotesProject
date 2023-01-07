@@ -66,8 +66,9 @@ h1.example-app-name {
 .s-btn img{
   border: none;
   background: transparent;
-  height: 40px;
-  margin-bottom: -22px;
+  height: 25px;
+  margin-top: 9px;
+  margin-left: 6px;
 
 }
 
@@ -78,16 +79,6 @@ h1.example-app-name {
 }
 .refresh{
   margin-right: 30px;
-  // background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjMDAwIj4KICA8cGF0aCBkPSJNMTMgOXYyaDdWNGgtMnYyLjc0QzE2LjUzIDUuMDcgMTQuNCA0IDEyIDRjLTIuMjEgMC00LjIxLjktNS42NiAyLjM0UzQgOS43OSA0IDEyYzAgNC40MiAzLjU4IDggOCA4IDIuMjEgMCA0LjIxLS45IDUuNjYtMi4zNGwtMS40Mi0xLjQyQTUuOTggNS45OCAwIDAgMSAxMiAxOGMtMy4zMSAwLTYtMi42OS02LTYgMC0xLjY1LjY3LTMuMTUgMS43Ni00LjI0QTUuOTggNS45OCAwIDAgMSAxMiA2YTYuMDEgNi4wMSAwIDAgMSA1LjE5IDNIMTN6Ii8+Cjwvc3ZnPgo=);
-  // -webkit-background-size: 24px 24px;
-  // background-size: 24px 24px;
-  // -webkit-box-sizing: border-box;
-  // box-sizing: border-box;
-  // height: 48px;
-  // left: 0;
-  // position: absolute;
-  // top: 0;
-  // width: 48px;
 }
 .listV{
   margin-right: 30px;
@@ -100,6 +91,7 @@ h1.example-app-name {
 }
 .menu-btn{
   margin: 25px;
+  margin-left: 10px;
 }
 .logo{
   width: 52px;
@@ -108,32 +100,33 @@ h1.example-app-name {
 .srch{
 width: 600px;
 }
-.note{
-display: flex;
-flex-direction: row;
-padding-left: 15px;
-// background-color: #feefc3;
-}
-.rem{
+.note-title{
 display: flex;
 flex-direction: row;
 padding-left: 15px;
 }
-.label{
-display: flex;
-flex-direction: row;
-padding-left: 15px;
+.nav-image{
+  margin-right: 15px;
+  padding-left: 0px;
 }
-.arcv{
-display: flex;
-flex-direction: row;
-padding-left: 15px;
+a{
+ margin-right: 30px;
 }
-.trash{
-display: flex;
-flex-direction: row;
-padding-left: 15px;
+.grid-icon{
+  height: 20px;
 }
+
+
+
+.listview{
+border: none;
+ margin-right: 30px;
+}
+.gridview{
+  border: none;
+ margin-right: 33px;
+}
+
 @media (min-width:360px) {
 .example-toolbar{
 width: 100%;

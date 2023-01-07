@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
+import { DataServiceService } from 'src/app/services/dataService/data-service.service';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   mobileQuery: MediaQueryList;
+  formatGridList = false;
+  grid = false;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -27,7 +30,7 @@ export class DashboardComponent implements OnInit {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router:Router) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router:Router, private dataService:DataServiceService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -47,5 +50,31 @@ export class DashboardComponent implements OnInit {
   }
   archiveNotes(){
     this.router.navigateByUrl("/dashboard/archive-notes")
+  }
+  searchNote(event:any){
+    this.dataService.sendMessage(event.target.value)
+  }
+
+  FormatView() {
+    if (this.formatGridList == false) {
+      this.formatGridList = true
+      return this.formatGridList
+    }
+    else {
+      this.formatGridList = false
+      return this.formatGridList
+    }
+  }
+
+  formatListView() {
+    this.grid = true
+    this.dataService.viewUpdate(this.FormatView().valueOf())
+    console.log("value= ", this.FormatView().valueOf())
+  }
+
+  formatGridView() {
+    this.grid = false
+    this.dataService.viewUpdate(this.FormatView().valueOf())
+    console.log("value ", this.FormatView())
   }
 }
