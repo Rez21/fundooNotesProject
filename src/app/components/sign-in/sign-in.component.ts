@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user.service';
 
@@ -16,7 +17,7 @@ export class SignInComponent implements OnInit {
   submitted = false;
   
 
-  constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router,private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     
@@ -46,9 +47,13 @@ export class SignInComponent implements OnInit {
         console.log(response);
         localStorage.setItem('token',response.id); 
         this.router.navigateByUrl('/dashboard/notes')
+        this.SnackBar('Signed In','Dismiss')
       }   
       )
     }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
+  }
+  SnackBar(msg: string, action:string){
+    this.snackBar.open(msg, action);
   }
 }

@@ -27,10 +27,22 @@
                 class="refresh">
                 <img src="../../../assets/refresh.svg" alt="">
             </div>
-            <div role="button" data-tooltip-text="List view" aria-label="List view" style="user-select: none;"
+            <!-- <div role="button" data-tooltip-text="List view" aria-label="List view" style="user-select: none;"
                 class="listV">
                 <img src="../../../assets/list view.svg" alt="">
+            </div> -->
+            <div *ngIf="!grid" class="listview">
+              
+                    <img (click)="formatListView();FormatView()" src="../../../assets/list view.svg" alt="">
+               
             </div>
+            <div *ngIf="grid" class="gridview">
+            
+                    <img (click)="formatGridView();FormatView()" class="grid-icon" src="../../../assets/menu.png" alt="">
+               
+            </div>
+
+
             <div role="button" data-tooltip-text="Settings" aria-label="Settings" style="user-select: none;"
                 class="set">
                 <img src="../../../assets/settings.svg" alt="">
@@ -43,7 +55,7 @@
             </a>
         </div>
         <div (click)="Logout()">
-            <img src="../../../assets/person.svg" alt="">
+            <img class="logout-icon" src="../../../assets/person.svg" alt="">
         </div>
     </mat-toolbar>
 

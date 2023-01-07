@@ -1,10 +1,12 @@
-.head{
+.head {
     display: flex;
     flex-wrap: wrap;
     margin-left: 130px;
 }
+
 .notes {
-    max-width: 310px;
+   min-height: 120px;
+    min-width: 270px;
     margin: 10px;
     border: 1px solid rgb(209, 202, 202);
     border-radius: 5px;
@@ -13,20 +15,60 @@
     flex-wrap: wrap;
     background-color: white;
 }
-.notes:hover{
+
+.notes:hover {
     box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+    .note-icons{
+        display: contents;
+    }
+
 }
-.title{
+
+.title {
     margin-left: 18px;
     margin-top: 10px;
     font-size: medium;
     font-weight: 400;
+    width: 250px;
+    word-wrap: break-word;
 }
- 
-.descriptiodata{
+
+.descriptiodata {
     margin-left: 18px;
     font-size: medium;
- }
- .note-icons{
+    max-width: fit-content;
+}
+
+.note-icons {
     align-items: baseline;
- }
+    display: none;
+}
+
+::ng-deep.mat-dialog-container {
+    padding: 0px !important;
+}
+
+// .list-container {
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     margin-left: 130px;
+
+//     .notes-list {
+//         width: 785px;
+//         min-width: 250px;
+//         margin: 10px;
+//         border: 1px solid rgb(209, 202, 202);
+//         border-radius: 5px;
+//         display: flex;
+//         flex-direction: column;
+//         flex-wrap: wrap;
+//         background-color: white;
+//     }
+// }
+
+.gridToList {
+    width: 53.5%;
+    
+    margin-left: 12rem;
+}

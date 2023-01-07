@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user.service';
 
 
@@ -13,7 +15,7 @@ export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
     submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private user:UserService) {
+  constructor(private formBuilder: FormBuilder, private user:UserService, private route: Router, private snackBar: MatSnackBar) {
    }
 
   ngOnInit(){
@@ -45,9 +47,16 @@ onSubmit() {
     }
       this.user.registration(reqdata).subscribe((response: any)=>{
           console.log(response)
+          this.route.navigateByUrl('sign-in');
+          this.SnackBar('User Registered Successfully','Dismiss')
       })
   }
 }
+SnackBar(msg: string, action:string){
+  this.snackBar.open(msg, action);
+}
+
+
 }
 
 
@@ -68,6 +77,9 @@ function MustMatch(password: string, confirmPassword: string) {
           matchingControl.setErrors(null);
       }
   }
+
+
+  
 }
 
 

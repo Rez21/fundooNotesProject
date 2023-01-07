@@ -10,6 +10,8 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { AuthenticationGuard } from './authentication.guard';
 import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
 import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
+
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:'sign-in', component: SignInComponent},
   {path:'forget-email', component: ForgetEmailComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
+  {path:'icon',component:IconsComponent},
+  
   {path: 'password-reset', component: PasswordResetComponent},
   {path:'', redirectTo:"/sign-in",pathMatch:'full'},
   {path:'dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],

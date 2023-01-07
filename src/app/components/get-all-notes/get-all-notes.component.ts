@@ -26,10 +26,12 @@ export class GetAllNotesComponent implements OnInit {
         return result.isArchived == false && result.isDeleted == false;
       })
       // gives list in console
+      this.NoteList = this.NoteList.reverse();
     })
   }
-  updateEvent($event: any) {
+
+  updateEvent($event:string) {
     this.getAllNote();
   }
-
 }
+

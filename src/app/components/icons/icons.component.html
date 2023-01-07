@@ -1,25 +1,26 @@
-
-<div class="icon-container" *ngIf="this.noteCard.isDeleted==false">
+<div class="icon-container" *ngIf="!isTrashNotesComponent">
     <div class="icon">
-        <button mat-icon-button matTooltip="Reminder" mat-button [matMenuTriggerFor]="reminder"> <img src="../../../assets/remind.svg"></button>
+        <button mat-icon-button matTooltip="Reminder" mat-button [matMenuTriggerFor]="reminder"> <img
+                src="../../../assets/remind.svg"></button>
         <mat-menu #reminder="matMenu">
             <!-- <input [(ngModel)]="datetimereminder"
                  [owlDateTimeTrigger]="dtPicker1" [owlDateTime]="dtPicker1">
-            <owl-date-time #dtPicker1></owl-date-time> -->
+            <owl-date-time #dtPicker1></owl-date-time>  this.noteCard.isDeleted==false-->
         </mat-menu>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="BackroundColor" [matMenuTriggerFor]="color"> <img src="../../../assets/backColor.svg"></button>
-         <mat-menu   #color="matMenu"  >
+        <button mat-icon-button matTooltip="BackroundColor" [matMenuTriggerFor]="color"> <img
+                src="../../../assets/backColor.svg"></button>
+        <mat-menu #color="matMenu">
             <div class="color-options">
-            <div class="bg-color" *ngFor="let color of colors">
-                <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
-                    [style.background]="color?.code" (click)="colorChange(color.code)"></button>
+                <div class="bg-color" *ngFor="let color of colors">
+                    <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
+                        [style.background]="color?.code" (click)="colorChange(color.code)"></button>
+                </div>
             </div>
-        </div>
         </mat-menu>
     </div>
     <div class="icon">
@@ -27,26 +28,29 @@
     </div>
 
     <div class="icon" *ngIf="isDisplayNotesComponent">
-        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
+        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img
+                src="../../../assets/archive.svg"></button>
     </div>
     <div class="icon" *ngIf="isArchiveNotesComponent">
-        <button mat-icon-button matTooltip="Unarchive" (click)="unArchive()"> <img src="../../../assets/unarchive.svg"></button>
+        <button mat-icon-button matTooltip="Unarchive" (click)="unArchive()"> <img
+                src="../../../assets/unarchive.svg"></button>
     </div>
-   
+
     <div class="icon">
-        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt=""></button>
+        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img
+                src="../../../assets/more.svg" alt=""></button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="trash()">Delete</button>
             <button mat-menu-item>Add Lable</button>
             <button mat-menu-item>Add Drawing</button>
             <button mat-menu-item>Make a copy</button>
             <button mat-menu-item>Show checkboxes</button>
-          </mat-menu>
+        </mat-menu>
     </div>
-    
+
 </div>
 <div class="restore" *ngIf="this.noteCard.isDeleted==true">
     <button mat-icon-button matTooltip="Restore" (click)="restore()"> <img src="../../../assets/Restore.svg"></button>
-    <button mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)"> <img
+    <button  mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)"> <img
             src="../../../assets/delete-permenent.svg"></button>
 </div>

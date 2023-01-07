@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, createComponent, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/services/notesService/notes-service.service';
 import { ArchiveNotesComponent } from '../archive-notes/archive-notes.component';
+import { CreateNotesComponent } from '../create-notes/create-notes.component';
 import { DisplayNotesComponent } from '../display-notes/display-notes.component';
 import { GetAllNotesComponent } from '../get-all-notes/get-all-notes.component';
 import { TrashNotesComponent } from '../trash-notes/trash-notes.component';
@@ -14,7 +16,7 @@ import { TrashNotesComponent } from '../trash-notes/trash-notes.component';
 export class IconsComponent implements OnInit {
   private datetimereminder = new Date(Date.now());
 
-  constructor(private note: NoteService,private route:ActivatedRoute) { }
+  constructor(private note: NoteService,private route:ActivatedRoute,private snackBar: MatSnackBar) { }
   @Input() noteCard: any;
   @Output() IconEvent = new EventEmitter<string>();
   isArchiveNotesComponent = false;
@@ -24,12 +26,12 @@ export class IconsComponent implements OnInit {
   ngOnInit(): void {
     let  IconNext = this.route.snapshot.component;
 
-    if(IconNext == ArchiveNotesComponent)
+    if(IconNext == ArchiveNotesComponent )
     {
       this.isArchiveNotesComponent=true;
     }
 
-    if(IconNext == GetAllNotesComponent)
+    if(IconNext == GetAllNotesComponent && IconNext)
     {
       this.isDisplayNotesComponent=true;
     }
@@ -37,6 +39,9 @@ export class IconsComponent implements OnInit {
     if(IconNext == TrashNotesComponent)
     {
       this.isTrashNotesComponent=true;
+    }
+    if(IconNext == CreateNotesComponent){
+      this.isDisplayNotesComponent=true;
     }
 
 
@@ -53,6 +58,7 @@ export class IconsComponent implements OnInit {
       console.log(res);
       this.IconEvent.emit(res)
     })
+    this.SnackBar('Note Deleted','Dismiss')
   }
   //Archive
   archive(){
@@ -65,6 +71,7 @@ export class IconsComponent implements OnInit {
       console.log(res);
       this.IconEvent.emit(res)
     })
+    this.SnackBar('Note Archived','Dismiss')
   }
 
   //unarchive
@@ -78,6 +85,7 @@ export class IconsComponent implements OnInit {
       console.log(res);
       this.IconEvent.emit(res)
     })
+    this.SnackBar('Note Unarchived','Dismiss')
   }
 
   // array of colors
@@ -119,6 +127,7 @@ export class IconsComponent implements OnInit {
     this.note.trashNote(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
     })
+    this.SnackBar('Note Restored','Dismiss')
   }
   delete(noteIdList:any){
     let payload={
@@ -127,6 +136,7 @@ export class IconsComponent implements OnInit {
     this.note.permanentDelete(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
     })
+    this.SnackBar('Note Deleted Permenantly','Dismiss')
   }
   setReminder(){
     let data={
@@ -134,4 +144,9 @@ export class IconsComponent implements OnInit {
     }
   }
 
+  SnackBar(msg: string, action:string){
+    this.snackBar.open(msg, action, {
+      duration: 3000
+    });
+  }
 }

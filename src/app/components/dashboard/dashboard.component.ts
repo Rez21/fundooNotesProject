@@ -13,6 +13,8 @@ import { DataServiceService } from 'src/app/services/dataService/data-service.se
 export class DashboardComponent implements OnInit {
 
   mobileQuery: MediaQueryList;
+  formatGridList = false;
+  grid = false;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -53,4 +55,26 @@ export class DashboardComponent implements OnInit {
     this.dataService.sendMessage(event.target.value)
   }
 
+  FormatView() {
+    if (this.formatGridList == false) {
+      this.formatGridList = true
+      return this.formatGridList
+    }
+    else {
+      this.formatGridList = false
+      return this.formatGridList
+    }
+  }
+
+  formatListView() {
+    this.grid = true
+    this.dataService.viewUpdate(this.FormatView().valueOf())
+    console.log("value= ", this.FormatView().valueOf())
+  }
+
+  formatGridView() {
+    this.grid = false
+    this.dataService.viewUpdate(this.FormatView().valueOf())
+    console.log("value ", this.FormatView())
+  }
 }

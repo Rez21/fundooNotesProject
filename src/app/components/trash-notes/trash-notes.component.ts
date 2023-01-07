@@ -27,4 +27,3 @@ export class TrashNotesComponent implements OnInit {
      this.getTrashNotes();
    }
 }
-
