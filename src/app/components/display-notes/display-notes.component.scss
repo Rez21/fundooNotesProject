@@ -5,7 +5,7 @@
 }
 
 .notes {
-   min-height: 120px;
+    min-height: 120px;
     min-width: 270px;
     margin: 10px;
     border: 1px solid rgb(209, 202, 202);
@@ -37,9 +37,12 @@
     margin-left: 18px;
     font-size: medium;
     max-width: fit-content;
+    word-wrap: break-word;
+    padding-right: 1rem;
 }
 
 .note-icons {
+    width: auto;
     align-items: baseline;
     display: none;
 }
@@ -69,6 +72,5 @@
 
 .gridToList {
     width: 53.5%;
-    
     margin-left: 12rem;
 }
