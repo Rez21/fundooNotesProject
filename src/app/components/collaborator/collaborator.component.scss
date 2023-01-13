@@ -141,3 +141,43 @@ input {
     border: none;
     outline: none;
   }
+  .menu{
+    margin: 1px;
+
+  }
+  .mat-menu-panel {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 48px);
+    border-radius: 4px;
+    outline: 0;
+    min-height: 64px;
+    position: relative;
+  }
+
+
+  .bottom-options{
+    height: 50px;
+    width: 100%;
+    background-color: #00000012;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    .end-buttons{
+    
+    display: flex;
+    flex-direction: row; 
+    align-content: space-between;
+    margin-left: 430px;
+    margin-top: 15px;
+
+     .cancel-button{
+        margin-right: 40px;
+     }
+     button{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+     }
+    }
+  }

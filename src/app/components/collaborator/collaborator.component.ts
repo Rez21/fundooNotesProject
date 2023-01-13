@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output,Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/notesService/notes-service.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class CollaboratorComponent implements OnInit {
   collaborators: any=[];
   collabEmail: any = '';
   collabname:any;
-  constructor( public dialogRef:MatDialogRef<CollaboratorComponent>, @Inject(MAT_DIALOG_DATA) public data:any, private note:NoteService) {
+  constructor( public dialogRef:MatDialogRef<CollaboratorComponent>, @Inject(MAT_DIALOG_DATA) public data:any, private note:NoteService,private snackBar: MatSnackBar) {
     this.user = data.user.email
     this.profileName = data.user.firstName[0];
     this.firstname=data.user.firstName
@@ -32,16 +33,11 @@ export class CollaboratorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // closeDialog(){
-  //   let data={
-  //     noteId:this.id,
-  //   }
-  //   this.note.updateNote(data).subscribe((response:any)=>{
-  //     console.log("update response",response);
-  //     this.dialogRef.close(response);
-  //    
-  //   })
-  // }
+   closeDialog(){
+   
+       this.dialogRef.close()
+  
+   }
 
   addCollab() {
     let data = {
@@ -53,7 +49,9 @@ export class CollaboratorComponent implements OnInit {
     console.log(data);
     this.note.addCollaborator(this.data.id, data).subscribe((response: any) => {
       console.log(response);
+      this.collaborators.push(data);
     })
+    this.SnackBar('Collaborator Added','Dismiss')
   }
 
 
@@ -75,12 +73,20 @@ export class CollaboratorComponent implements OnInit {
   }
   save(collabList:any){
     this.dialogRef.close(collabList);
-    
+    this.SnackBar('Collaborators Saved','Dismiss')
   }
 
   removeCollab(collabid:any){
     this.note.removeCollaborator(this.data.id, collabid).subscribe((res:any)=>{
       console.log(res);
+      this.collaborators.pop(collabid)
     })
+    this.SnackBar('Collaborator removed','Dismiss')
+  }
+
+  SnackBar(msg: string, action:string){
+    this.snackBar.open(msg, action, {
+      duration: 3000
+    });
   }
 }

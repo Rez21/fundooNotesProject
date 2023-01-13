@@ -43,10 +43,29 @@
             <img class="collab-logo" src="../../../assets/collaborator-icon.png">
         </div>
         <div class="collab-input">
-            <input class="collab-input-field"  placeholder="Person or email to share with">
+            <input class="collab-input-field" placeholder="Person or email to share with" (keyup)="collab($event)"
+                [(ngModel)]="collabEmail" [matMenuTriggerFor]="collaboratorList">
         </div>
         <div class="collab-submit">
-            <img class="collab-submit-logo" src="../../../assets/check.png">
+            <img class="collab-submit-logo" (click)="addCollab()" src="../../../assets/check.png">
         </div>
+        <mat-menu #collaboratorList="matMenu" class="menu">
+            <div>
+                <div class="bg-color" *ngFor="let data of collabList">
+                    <mat-list-item role="listitem" (click)="selectCollab(data)">{{data.email}}</mat-list-item>
+                </div>
+            </div>
+        </mat-menu>
     </div>
+
+</div>
+<div class="bottom-options">
+<div class="end-buttons">
+    <div class="cancel-button">
+        <button mat-button matTooltip="Cancel" (click)="closeDialog()">Cancel</button>
+    </div>
+    <div class="save-button">
+        <button mat-button matTooltip="Save" (click)="save(collaborators)">Save</button>
+    </div>
+</div>
 </div>
