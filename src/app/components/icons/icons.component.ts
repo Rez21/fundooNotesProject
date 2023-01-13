@@ -1,8 +1,10 @@
 import { Component, createComponent, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/services/notesService/notes-service.service';
 import { ArchiveNotesComponent } from '../archive-notes/archive-notes.component';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { CreateNotesComponent } from '../create-notes/create-notes.component';
 import { DisplayNotesComponent } from '../display-notes/display-notes.component';
 import { GetAllNotesComponent } from '../get-all-notes/get-all-notes.component';
@@ -16,7 +18,7 @@ import { TrashNotesComponent } from '../trash-notes/trash-notes.component';
 export class IconsComponent implements OnInit {
   private datetimereminder = new Date(Date.now());
 
-  constructor(private note: NoteService,private route:ActivatedRoute,private snackBar: MatSnackBar) { }
+  constructor(private note: NoteService,private route:ActivatedRoute,private snackBar: MatSnackBar,public dialog: MatDialog) { }
   @Input() noteCard: any;
   @Output() IconEvent = new EventEmitter<string>();
   isArchiveNotesComponent = false;
@@ -149,4 +151,14 @@ export class IconsComponent implements OnInit {
       duration: 3000
     });
   }
+
+  openCollab(note: any){
+    let dialogRef = this.dialog.open(CollaboratorComponent,{
+      
+      data: this.noteCard,
+      panelClass:'customDialog'
+    })
+  }
+  //////////collaborator
+
 }

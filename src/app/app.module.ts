@@ -38,6 +38,7 @@ import { UpdateNotesComponent } from './components/update-notes/update-notes.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ReminderNotesComponent } from './components/reminder-notes/reminder-notes.component';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
 
 
@@ -63,7 +64,8 @@ import { ReminderNotesComponent } from './components/reminder-notes/reminder-not
     TrashNotesComponent,
     UpdateNotesComponent,
     FilterPipe,
-    ReminderNotesComponent
+    ReminderNotesComponent,
+    CollaboratorComponent
     
   ],
   imports: [

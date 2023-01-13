@@ -100,5 +100,40 @@ export class NoteService {
     }
     return this.httpService.postService("/notes/deleteForeverNotes",payload, true, header)
   }
+
+
+  addCollaborator(noteId:any,data: any){
+    let header ={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService(`/notes/${noteId}/AddcollaboratorsNotes`, data, true, header)
+
+  }
+
+  getCollaborator(data:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/user/searchUserList", data, true, header)
+  }
+
+
+  removeCollaborator(id:any,collaboratorUserId:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.deleteService(`/notes/${id}/removeCollaboratorsNotes/${collaboratorUserId}`,true, header)
+  }
 }
 

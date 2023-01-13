@@ -56,6 +56,8 @@ export class SignInComponent implements OnInit {
 
  
   SnackBar(msg: string, action: string) {
-    this.snackBar.open(msg, action);
+    this.snackBar.open(msg, action,{
+        duration: 3000
+    });
   }
 }

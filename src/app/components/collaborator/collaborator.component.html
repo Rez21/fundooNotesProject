@@ -1,0 +1,52 @@
+<div class="collab-card">
+    <div class="collab-title">
+        <p>Collaborators</p>
+    </div>
+    <div class="owner-info">
+        <div class="image">
+            <p>{{profileName}}</p>
+        </div>
+        <div class="owner-details">
+            <div class="owner-name">
+                <div class="name">{{firstname}}</div>
+                <div class="name">{{lastname}}</div>
+                <div class="des">(Owner)</div>
+
+            </div>
+            <div class="user-mail">{{user}}</div>
+        </div>
+
+    </div>
+    <div class="collab-info" *ngFor="let person of collaborators">
+        <div class="collab-list2">
+            <div class="image">
+                <p class="inLetter">{{person.firstName[0]}}</p>
+            </div>
+            <div class="collab-details">
+                <div class="collab-name">
+                    <div class="name">{{person.firstName}}</div>
+                    <div class="name">{{person.lastName}}</div>
+                </div>
+                <div class="email-section">
+                    <div class="collab-mail">{{person.email}}</div>
+                </div>
+            </div>
+            <div class="action-btn">
+                <img class="cancel-img" (click)="removeCollab(person.userId)" src="../../../assets/cross.png">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="collab-field">
+        <div class="collab-image">
+            <img class="collab-logo" src="../../../assets/collaborator-icon.png">
+        </div>
+        <div class="collab-input">
+            <input class="collab-input-field"  placeholder="Person or email to share with">
+        </div>
+        <div class="collab-submit">
+            <img class="collab-submit-logo" src="../../../assets/check.png">
+        </div>
+    </div>
+</div>
