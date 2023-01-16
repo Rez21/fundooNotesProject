@@ -19,11 +19,14 @@ export class DisplayNotesComponent implements OnInit {
   Search = '';
   isGridView = true;
   gridlist: any;
+ 
   constructor(public dialog: MatDialog, private dataService: DataServiceService) { }
 
   ngOnInit(): void {
     this.dataService.store.subscribe(a=>this.gridlist=a)
     console.log(this.recieveNoteList);
+
+    //console.log(this.collaborators);
     this.dataService.currentMessage.subscribe((res: any) => {
       console.log(res)
       this.Search = res;

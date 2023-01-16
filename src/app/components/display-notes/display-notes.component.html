@@ -7,6 +7,13 @@
         <div class="descriptiodata">
             <p (click)="openDialog(note)">{{note.description}}</p>
         </div>
+        <div>
+        <div class="collaborators" >
+            <div class="collab-circle" *ngFor="let person of note.collaborators">
+                <p class="collab-initial">{{person.firstName[0]}}</p>
+            </div>
+        </div>
+        
         <div class="note-icons">
         <app-icons [noteCard]="note" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
         </div>

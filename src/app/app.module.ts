@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { AppComponent } from './app.component';
@@ -39,6 +40,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ReminderNotesComponent } from './components/reminder-notes/reminder-notes.component';
 import { CollaboratorComponent } from './components/collaborator/collaborator.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 
 
@@ -65,7 +68,9 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     UpdateNotesComponent,
     FilterPipe,
     ReminderNotesComponent,
-    CollaboratorComponent
+    CollaboratorComponent,
+    ParentComponent,
+    ChildComponent
     
   ],
   imports: [
@@ -85,7 +90,8 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     MatMenuModule,
     MatDialogModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [
     AuthguardServiceService
