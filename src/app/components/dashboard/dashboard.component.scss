@@ -32,12 +32,14 @@ h1.example-app-name {
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
 }
-.example-toolbar{
+
+.example-toolbar {
   display: flex;
   flex-direction: row;
   align-content: space-around;
 }
-.search-container{
+
+.search-container {
   display: flex;
   flex-direction: row;
   margin: 85px;
@@ -47,9 +49,10 @@ h1.example-app-name {
   padding-right: 28px;
   background-color: #efe9e9;
   vertical-align: middle;
-  
+
 }
-.search-field{
+
+.search-field {
   margin-bottom: 7px;
   width: 500px;
   height: 42px;
@@ -61,9 +64,10 @@ h1.example-app-name {
   font-variant-ligatures: none;
   background: transparent;
   border: none;
-  font: normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif;
+  font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
 }
-.s-btn img{
+
+.s-btn img {
   border: none;
   background: transparent;
   height: 25px;
@@ -72,66 +76,336 @@ h1.example-app-name {
 
 }
 
-.btn-container{
+.btn-container {
   display: flex;
   flex-direction: row;
   margin: 21px;
 }
-.refresh{
+
+.refresh {
   margin-right: 30px;
 }
-.listV{
+
+.listV {
   margin-right: 30px;
 }
-.set{
+
+.set {
   margin-right: 30px;
 }
-.apps{
+
+.apps {
   margin-right: 30px;
 }
-.menu-btn{
+
+.menu-btn {
   margin: 25px;
   margin-left: 10px;
 }
-.logo{
+
+.logo {
   width: 52px;
   height: 52px;
 }
-.srch{
-width: 600px;
+
+.srch {
+  width: 600px;
 }
-.note-title{
-display: flex;
-flex-direction: row;
-padding-left: 15px;
+
+.note-title {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
 }
-.nav-image{
+
+.nav-image {
   margin-right: 15px;
   padding-left: 0px;
 }
-a{
- margin-right: 30px;
+
+a {
+  margin-right: 30px;
 }
-.grid-icon{
+
+.grid-icon {
   height: 20px;
 }
 
 
 
-.listview{
-border: none;
- margin-right: 30px;
-}
-.gridview{
+.listview {
   border: none;
- margin-right: 33px;
+  margin-right: 30px;
 }
 
-@media (min-width:360px) {
-.example-toolbar{
-width: 100%;
+.gridview {
+  border: none;
+  margin-right: 33px;
 }
-.example-sidenav-container{
-width: 100%;
+
+
+
+
+
+
+
+@media(min-width:160px)and (max-width:420px) {
+ 
+  .srch {
+    display: none;
+  }
+
+  .s-btn img {
+    border: none;
+    background: transparent;
+    height: 80%;
+    margin-top: 2px;
+  }
+
+
+  .search-container {
+    background-color: transparent;
+  }
+  .btn-container{
+    margin-right: 2px;
+    margin-left: -88px;
+  }
+
+.apps{
+  margin-left: -23px;
+   margin-right: 5px;
+
 }
+.menu-btn{
+  margin-right: 1px;
+}
+.logo{
+  img{
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+  }
+}
+h1.example-app-name{
+  display: none;
+  visibility: hidden;
+}
+.refresh{
+  display: none;
+  visibility: hidden;
+}
+.set{
+  display: none;
+  visibility: hidden;
+}
+}
+
+
+
+
+@media(min-width:420px)and (max-width:720px) {
+ 
+  .srch {
+    width: 100px;
+  }
+  .search-field {
+    margin-bottom: 7px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 15px;
+    text-align: start;
+    box-sizing: border-box;
+    outline: none;
+    font-variant-ligatures: none;
+    background: transparent;
+    font: normal 10px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .s-btn img {
+    display: none;
+  }
+
+
+  .search-container {
+    background-color: transparent;
+    margin-left: 5px;
+  }
+  .btn-container{
+    margin-right: 1px;
+    margin-left: 0px;
+    width: 70px;
+  }
+
+.apps{
+  margin-left: 10px;
+   margin-right: 3px;
+
+}
+.menu-btn{
+  margin-right: 1px;
+}
+.logo{
+  img{
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+    margin-right: 0px;
+  }
+}
+h1.example-app-name{
+  margin-left: 1px;
+  font-size: large;
+}
+.refresh{
+  display: none;
+}
+
+}
+
+@media(min-width:820px)and (max-width:912px){
+  .srch {
+    width: 150px;
+    margin-right: 2px;
+  }
+  .search-field {
+    margin-bottom: 7px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    font-variant-ligatures: none;
+    background: transparent;
+    
+    font: normal 10px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+  }
+  .btn-container{
+    margin-right: 1px;
+    margin-left: -50px;
+    width: 100px;
+  }
+  .refresh {
+    margin-right: 10px;
+  }
+  .listV {
+    margin-right: 10px;
+  }
+  .apps{
+    margin-left: 10px;
+    margin-right: 3px;
+  }
+  .listview {
+    border: none;
+    margin-right: 15px;
+  }
+  
+  .gridview {
+    border: none;
+    margin-right: 17px;
+  }
+}
+
+@media(min-width:912px)and (max-width:1230px){
+  .srch {
+    width: 250px;
+    margin-right: 2px;
+  }
+  .search-field {
+    margin-bottom: 7px;
+    width: 150px;
+    height: 30px;
+   border: none;
+
+    border-radius: 5px;
+    background: transparent;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: start;
+    box-sizing: border-box;
+    outline: none;
+    font-variant-ligatures: none;
+    background: transparent;
+    
+    font: normal 10px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+  }
+  .btn-container{
+    margin-right: 1px;
+    margin-left: -50px;
+    width: 100px;
+  }
+  .refresh {
+    margin-right: 10px;
+  }
+  .listV {
+    margin-right: 10px;
+  }
+  .apps{
+    margin-left: 10px;
+    margin-right: 3px;
+  }
+  .listview {
+    border: none;
+    margin-right: 15px;
+  }
+  
+  .gridview {
+    border: none;
+    margin-right: 17px;
+  }
+}
+
+@media(min-width:700px)and (max-width:820px){
+  .srch {
+    width: 250px;
+    margin-right: 2px;
+  }
+  .search-field {
+    margin-bottom: 7px;
+    width: 150px;
+    height: 30px;
+   border: none;
+
+    border-radius: 5px;
+    background: transparent;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: start;
+    box-sizing: border-box;
+    outline: none;
+    font-variant-ligatures: none;
+    background: transparent;
+    
+    font: normal 10px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+  }
+  .btn-container{
+    margin-right: 1px;
+    margin-left: -50px;
+    width: 100px;
+  }
+  .refresh {
+    margin-right: 10px;
+  }
+  .listV {
+    margin-right: 10px;
+  }
+  .apps{
+    margin-left: 10px;
+    margin-right: 3px;
+  }
+  .listview {
+    border: none;
+    margin-right: 15px;
+  }
+  
+  .gridview {
+    border: none;
+    margin-right: 17px;
+  }
 }

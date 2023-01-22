@@ -104,8 +104,37 @@
 
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (max-device-width : 360px) {
 /* Styles */
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+.notes {
+    min-height: 120px;
+    width: 270px;
+    max-width: 270;
+    margin: 10px;
+    border: 1px solid rgb(209, 202, 202);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.note-icons {
+    width: auto;
+    align-items: baseline;
+    display: none;
+}
+.notes:hover {
+    box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+    .note-icons{
+        display: contents;
+    }
+
+}
 }
 
 /* Smartphones (landscape) ----------- */
@@ -125,6 +154,29 @@ and (max-width : 320px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 /* Styles */
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 150px;
+}
+.notes {
+    min-height: 120px;
+    width: 500px;
+    
+    margin: 10px;
+    border: 1px solid rgb(209, 202, 202);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.note-icons {
+    width: auto;
+    align-items: baseline;
+    display: none;
+}
 }
 
 /* iPads (landscape) ----------- */

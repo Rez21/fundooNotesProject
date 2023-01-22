@@ -1,41 +1,4 @@
-// .head {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
 
-// .notes {
-//     display: flex;
-//     flex-direction: column;
-//     background-color: white;
-//     margin: 6px auto;
-//     margin-bottom: 30px;
-//     margin-left: 4px;
-//     margin-right: 30px;
-// }
-
-// .title {
-//     margin-left: 18px;
-//     margin-top: 10px;
-//     font-size: medium;
-//     font-weight: 400;
-// }
-
-// .description {
-//     margin-left: 18px;
-//     font-size: medium;
-// }
-
-// .icons {
-//     display: block;
-//     margin-right: 143px;
-// }
-
-
-// .select{
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     display: none;
-// }
 .Update-container{
     max-width: 750px;
     min-width: 600px;
@@ -86,4 +49,20 @@
 .closeButton{
     background-color: transparent;
     border: none;
+}
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 360px){
+    .Update-container{
+        max-width: 300px;
+        min-width: 299px;
+        display: flex;
+        
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: transparent;
+        
+    }
 }
