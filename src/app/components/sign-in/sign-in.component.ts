@@ -15,19 +15,19 @@ export class SignInComponent implements OnInit {
 
   loginForm!: FormGroup;
   submitted = false;
-  
+  show: boolean = false;
 
-  constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router,private snackBar: MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    
+
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: "advance",
-   });
+    });
 
-   
+
 
   }
   get f() { return this.loginForm.controls; }
@@ -42,18 +42,22 @@ export class SignInComponent implements OnInit {
         password: this.loginForm.value.password,
         service: this.loginForm.value.service
       }
-     
-      this.user.login(payload).subscribe((response:any) => {
+
+      this.user.login(payload).subscribe((response: any) => {
         console.log(response);
-        localStorage.setItem('token',response.id); 
+        localStorage.setItem('token', response.id);
         this.router.navigateByUrl('/dashboard/notes')
-        this.SnackBar('Signed In','Dismiss')
-      }   
+        this.SnackBar('Signed In', 'Dismiss')
+      }
       )
     }
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
-  SnackBar(msg: string, action:string){
-    this.snackBar.open(msg, action);
+
+ 
+  SnackBar(msg: string, action: string) {
+    this.snackBar.open(msg, action,{
+        duration: 3000
+    });
   }
 }

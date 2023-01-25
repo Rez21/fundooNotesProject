@@ -1,6 +1,6 @@
-.note-container{
+.note-container {
     border: 1px solid white;
-   
+
     box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
     border-radius: 12px;
     display: flex;
@@ -12,6 +12,7 @@
     margin: 35px;
     margin-left: 320px;
 }
+
 .title {
     min-height: 10px;
     padding: 10px 15px;
@@ -23,13 +24,15 @@
     width: 420px;
     border: none;
     outline: none;
-    font: normal 18px Google Sans,Roboto,Helvetica,Arial,sans-serif;
+    font: normal 18px Google Sans, Roboto, Helvetica, Arial, sans-serif;
 }
-.take-note{
+
+.take-note {
     display: flex;
     flex-direction: column-reverse;
 }
-.s-btn{
+
+.s-btn {
     border: none;
     background: transparent;
     height: 100%;
@@ -38,7 +41,8 @@
     margin-right: 20px;
     margin-top: 10px;
 }
-.note-field{
+
+.note-field {
     min-height: 27px;
     padding: 10px 15px;
     padding-top: 0px;
@@ -49,9 +53,10 @@
     width: 420px;
     border: none;
     outline: none;
-    font: normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif;
-  }
-  .icons {
+    font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.icons {
     padding-left: 579px;
     opacity: 0.7;
     margin-bottom: -27px;
@@ -60,33 +65,118 @@
 .icons button {
     border: none;
     background-color: white;
-    width:52px;
-    height:25px;
+    width: 52px;
+    height: 25px;
     padding-bottom: 30px;
 }
-.close{
+
+.close {
     display: flex;
     font-size: large;
     background-color: white;
-    border:0px white;
+    border: 0px white;
     margin-right: 40px;
-    padding-top:15px;
+    padding-top: 15px;
     justify-content: space-between;
     border: none;
-    
+
 }
-.pin{
-    opacity:0.7;
+
+.pin {
+    opacity: 0.7;
 }
-.closeButton{
+
+.closeButton {
     background-color: transparent;
     border: none;
     margin-left: 20rem;
-    
+
 }
-.app-icons{
+
+.app-icons {
     width: 350px;
     display: flex;
     flex-direction: row;
     align-content: space-between;
+}
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 420px) {
+    .note-container {
+        border: 1px solid white;
+
+        box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
+        width: 310px;
+        margin: 35px;
+        margin-left: 30px;
+    }
+
+  
+
+    .app-icons {
+        width: 20px;
+    }
+
+    .title {
+        min-height: 10px;
+        // padding: 10px 15px;
+        // padding-top: 0px;
+        //padding-right: 289px;
+        padding-bottom: 30px;
+        // padding-left: 5px;
+        font-size: large;
+        width: 250px;
+        border: none;
+        outline: none;
+        font: normal 18px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .note-field {
+        width: 300px;
+    }
+
+    .icons {
+        display: none;
+    }
+    .closeButton{
+        background-color: transparent;
+        border: none;
+        margin-left: 2rem;  
+    }
+    .take-note{
+        display: flex;
+        flex-direction: column;
+        width: 290px;
+    }
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px){
+    .note-container {
+        border: 1px solid white;
+    
+        box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
+        width: 500px;
+        margin: 35px;
+        margin-left: 155px;
+    }
+    .note-field {
+        width: 100px;
+    }
+    .icons {
+        padding-left: 250px;
+        opacity: 0.7;
+        margin-bottom: -27px;
+    }
 }

@@ -1,4 +1,4 @@
-.main-signIn-container{
+.main-signIn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,30 +9,36 @@
     margin-left: 35%;
     margin-right: 35%;
 }
-.logo{
+
+.logo {
     margin-top: 40px;
 }
-.head-line{
+
+.head-line {
     margin-bottom: 20px;
-    
+
 }
-.bottom-options{
+
+.bottom-options {
     margin-top: 60px;
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
 
 }
-mat-hint{
+
+mat-hint {
     color: #01439a;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
 }
-.password-field{
+
+.password-field {
     padding-top: 10px;
 }
-.next-button{
+
+.next-button {
     background-color: #1a73e8;
     color: aliceblue;
     border: none;
@@ -42,60 +48,183 @@ mat-hint{
     font-weight: bold;
     padding: 5px;
 }
-.forgot-email-button{
+
+.forgot-email-button {
     padding-top: 0;
     margin-top: 0;
     margin-right: 300px;
 }
-.create-account-link{
+
+.create-account-link {
     margin-right: 230px;
     align-content: center;
     padding-top: 10px;
     font-weight: medium;
 }
-a{
+
+a {
     text-decoration: none;
     color: #01439a;
     padding-bottom: 2px;
 }
 
-h2{
+h2 {
     font-weight: 400;
     font-size: 24px;
-    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
 }
-h3{
+
+h3 {
     font-weight: 400;
-    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
 }
-mat-form-field{
+
+mat-form-field {
     width: 400px;
     padding-bottom: 5px;
     margin-bottom: 5px;
 
 }
-p{
+
+p {
     margin-bottom: 0px;
 }
-.forgot-email-link{
-    margin-top: 0px ;
+
+.forgot-email-link {
+    margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 10px;
 }
-.create-account-link{
+
+.create-account-link {
     font-weight: 450;
 }
 
-@media screen and (max-width:1300px){
-    mat-form-field{
-        width: 400px;
-        padding-bottom: 5px;
-        margin-bottom: 5px;
-    }
-    .main-signIn-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: none;
-    }
-}
+// @media screen and (max-width:1300px){
+//     mat-form-field{
+//         width: 400px;
+//         padding-bottom: 5px;
+//         margin-bottom: 5px;
+//     }
+//     .main-signIn-container{
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         border: none;
+//     }
+// }
+
+
+// @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+//     mat-form-field {
+//         width: 300px;
+//         padding-bottom: 5px;
+//         margin-bottom: 5px;
+//     }
+
+//     .main-signIn-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         border: none;
+//         align-content: center;
+//     }
+
+//     h2 {
+//         font-weight: 400;
+//         font-size: 18px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     h3 {
+//         font-size: 8px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     .create-account-link {
+//         margin-right: 125px;
+//         align-content: center;
+//         padding-top: 10px;
+//         font-weight: medium;
+//     }
+// }
+
+// /* Smartphones (landscape) ----------- */
+// @media only screen and (min-width : 321px) {
+//     mat-form-field {
+//         width: 300px;
+//         padding-bottom: 5px;
+//         margin-bottom: 5px;
+//     }
+
+//     .main-signIn-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         border: none;
+//         align-content: center;
+//     }
+
+//     h2 {
+//         font-weight: 400;
+//         font-size: 18px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     h3 {
+//         font-size: 9px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     .create-account-link {
+//         margin-right: 125px;
+//         align-content: center;
+//         padding-top: 10px;
+//         font-weight: medium;
+//     }
+
+// }
+
+// /* Smartphones (portrait) ----------- */
+// @media only screen and (max-width : 320px) {
+//     /* Styles */
+// }
+
+// /* iPads */
+// @media only screen and (min-device-width : 768px) and (max-device-width : 900px) {
+//     mat-form-field {
+//         width: 450px;
+//         padding-bottom: 5px;
+//         margin-bottom: 5px;
+//     }
+
+//     .main-signIn-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         // border: 0.5px solid #b8b3b3;
+//         //border-radius: 5px;
+//         border: none;
+//         align-content: center;
+
+//         margin-left: 29%;
+//     }
+
+//     h2 {
+//         font-weight: 400;
+//         font-size: 25px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     h3 {
+//         font-size: 18px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     .create-account-link {
+//         margin-right: 300px;
+//         align-content: center;
+//         padding-top: 10px;
+//         font-weight: medium;
+//     }
+// }

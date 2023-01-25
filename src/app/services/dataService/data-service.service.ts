@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class DataServiceService {
   private info = new Subject<any>();
   public store = this.info.asObservable();
+  
   private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable();
   viewMessage:any;

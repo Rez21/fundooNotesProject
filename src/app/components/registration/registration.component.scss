@@ -107,3 +107,154 @@ p{
     
     }
 }
+
+
+@media only screen
+and (min-device-width : 360px)
+and (max-device-width : 480px) {
+    .form-container {
+        border: none;
+    }
+    h4{
+        font-size: 10px;
+        margin-top: 3px;
+    }
+    mat-form-field{
+        width: 300px;
+    }
+/* Styles */
+}
+
+
+// @media only screen and (min-width : 321px) {
+//     mat-form-field {
+//         width: 300px;
+//         padding-bottom: 5px;
+//         margin-bottom: 5px;
+//     }
+
+//     .main-signIn-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         border: none;
+//         align-content: center;
+//     }
+
+//     h2 {
+//         font-weight: 400;
+//         font-size: 18px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     h3 {
+//         font-size: 9px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     .create-account-link {
+//         margin-right: 125px;
+//         align-content: center;
+//         padding-top: 10px;
+//         font-weight: medium;
+//     }
+
+// }
+
+// /* Smartphones (portrait) ----------- */
+// @media only screen and (max-width : 320px) {
+//     /* Styles */
+// }
+
+// /* iPads */
+// @media only screen and (min-device-width : 768px) and (max-device-width : 900px) {
+//     mat-form-field {
+//         width: 450px;
+//         padding-bottom: 5px;
+//         margin-bottom: 5px;
+//     }
+
+//     .main-signIn-container {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         // border: 0.5px solid #b8b3b3;
+//         //border-radius: 5px;
+//         border: none;
+//         align-content: center;
+
+//         margin-left: 29%;
+//     }
+
+//     h2 {
+//         font-weight: 400;
+//         font-size: 25px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     h3 {
+//         font-size: 18px;
+//         font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+//     }
+
+//     .create-account-link {
+//         margin-right: 300px;
+//         align-content: center;
+//         padding-top: 10px;
+//         font-weight: medium;
+//     }
+// }
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone  ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

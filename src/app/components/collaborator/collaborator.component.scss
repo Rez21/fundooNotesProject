@@ -1,0 +1,243 @@
+.collab-card {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    padding: 15px;
+    margin-bottom: 5px;
+
+    .collab-title {
+        font-size: 18px;
+        font-weight: 500;
+        height: 25px;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+        font-family: Roboto;
+    }
+
+    .image {
+        width: 30px;
+        height: 30px;
+        background-color: rebeccapurple;
+        border-radius: 100%;
+        border-color: white;
+        padding: 8px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+        margin-right: 10px;
+        color: aliceblue;
+
+        p {
+            margin-top: 3.5px;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+.owner-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+    margin-bottom: 7px;
+
+    .user-mail {
+        margin-left: 3px;
+        color: #5f6368;
+    }
+}
+
+.owner-name {
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    padding: 2.5px;
+
+    .name {
+        margin-right: 7px;
+        font-weight: 600;
+    }
+
+    .des {
+        font-style: italic;
+    }
+}
+
+.collab-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+
+    .collab-mail {
+        margin-left: 3px;
+        color: #5f6368;
+        width: 500px;
+    }
+
+    .inLetter {
+        text-transform: capitalize;
+        margin-top: 7px;
+    }
+
+
+}
+
+.collab-name {
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    padding: 2.5px;
+
+    .name {
+        margin-right: 7px;
+        font-weight: 600;
+    }
+}
+
+.collab-list2 {
+    display: flex;
+    flex-direction: row;
+
+    .cancel-img {
+        width: 12px;
+        height: 12px;
+        margin-top: 32px;
+    }
+ 
+}
+
+.collab-field {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+
+    .collab-image {
+        width: 30px;
+        height: 30px;
+        padding: 7px;
+        border: 1px solid black;
+        border-radius: 100%;
+
+        .collab-logo {
+            width: 30px;
+
+        }
+    }
+
+
+   .collab-input-field {
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 499px;
+   }
+   .collab-submit-logo{
+    width: 15px;
+    height: 15px;
+    margin-top: 17px;
+   }
+}
+input {
+    border: none;
+    outline: none;
+  }
+  .menu{
+    margin: 1px;
+
+  }
+  .mat-menu-panel {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 48px);
+    border-radius: 4px;
+    outline: 0;
+    min-height: 64px;
+    position: relative;
+  }
+
+
+  .bottom-options{
+    height: 50px;
+    width: 100%;
+    background-color: #00000012;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    .end-buttons{
+    
+    display: flex;
+    flex-direction: row; 
+    align-content: space-between;
+    margin-left: 430px;
+    margin-top: 15px;
+
+     .cancel-button{
+        margin-right: 40px;
+     }
+     button{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+     }
+    }
+  }
+
+  @media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

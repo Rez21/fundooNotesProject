@@ -3,7 +3,7 @@
         <input class="title" placeholder="Title" [(ngModel)]="title">
         <img class="pin" src="../../../assets/pin note.svg">
     </div>
-    <div class="take-note"  *ngIf="!isShow || isShow" (click)="Show()">
+    <div class="take-note" *ngIf="!isShow || isShow" (click)="Show()">
         <div *ngIf="!isShow || isShow">
             <input class="note-field" type="text" placeholder="Take a note..." [(ngModel)]="description">
         </div>
@@ -18,7 +18,7 @@
     </div>
     <div *ngIf="isShow" class="close">
         <div class="app-icons">
-         <app-icons></app-icons>
+            <app-icons></app-icons>
         </div>
         <button class="closeButton" (click)="Close()" mat-raised-button>Close</button>
     </div>

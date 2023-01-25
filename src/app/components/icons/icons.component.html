@@ -9,7 +9,7 @@
         </mat-menu>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
+        <button mat-icon-button matTooltip="Collaborator"> <img (click)="openCollab(noteCard.id)" src="../../../assets/collaborator.svg"></button>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="BackroundColor" [matMenuTriggerFor]="color"> <img

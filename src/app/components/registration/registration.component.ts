@@ -11,14 +11,15 @@ import { UserService } from 'src/app/services/userService/user.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
- 
+
   registerForm!: FormGroup;
-    submitted = false;
+  submitted = false;
+  show: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private user:UserService, private route: Router, private snackBar: MatSnackBar) {
-   }
+  constructor(private formBuilder: FormBuilder, private user: UserService, private route: Router, private snackBar: MatSnackBar) {
+  }
 
-  ngOnInit(){
+  ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -26,61 +27,57 @@ export class RegistrationComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       service: "advanced"
-   }, {
-       validator: MustMatch('password', 'confirmPassword')
-   });
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
+    });
   }
-  
-get f() { return this.registerForm.controls; }
 
-onSubmit() {
-  this.submitted = true;
+  get f() { return this.registerForm.controls; }
 
-  // stop here if form is invalid
-  if (this.registerForm.valid) {
-    let reqdata = {
-      firstName: this.registerForm.value.firstName,
-      lastName: this.registerForm.value.lastName,
-      email: this.registerForm.value.email,
-      password: this.registerForm.value.password,
-      service: this.registerForm.value.service
-    }
-      this.user.registration(reqdata).subscribe((response: any)=>{
-          console.log(response)
-          this.route.navigateByUrl('sign-in');
-          this.SnackBar('User Registered Successfully','Dismiss')
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.registerForm.valid) {
+      let reqdata = {
+        firstName: this.registerForm.value.firstName,
+        lastName: this.registerForm.value.lastName,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+        service: this.registerForm.value.service
+      }
+      this.user.registration(reqdata).subscribe((response: any) => {
+        console.log(response)
+        this.route.navigateByUrl('sign-in');
+        this.SnackBar('User Registered Successfully', 'Dismiss')
       })
+    }
   }
-}
-SnackBar(msg: string, action:string){
-  this.snackBar.open(msg, action);
-}
+  SnackBar(msg: string, action: string) {
+    this.snackBar.open(msg, action);
+  }
 
 
+  password() {
+    this.show = !this.show;
+  }
 }
 
 
 function MustMatch(password: string, confirmPassword: string) {
   return (formGroup: FormGroup) => {
-      const control = formGroup.controls[password];
-      const matchingControl = formGroup.controls[confirmPassword];
-
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-          // return if another validator has already found an error on the matchingControl
-          return;
-      }
-
-      // set error on matchingControl if validation fails
-      if (control.value !== matchingControl.value) {
-          matchingControl.setErrors({ mustMatch: true });
-      } else {
-          matchingControl.setErrors(null);
-      }
+    const control = formGroup.controls[password];
+    const matchingControl = formGroup.controls[confirmPassword];
+    if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
+      // return if another validator has already found an error on the matchingControl
+      return;
+    }
+    // set error on matchingControl if validation fails
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ mustMatch: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
   }
-
-
-  
 }
-
-
 
