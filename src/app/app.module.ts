@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 import { AppComponent } from './app.component';
@@ -91,7 +92,8 @@ import { ChildComponent } from './components/child/child.component';
     MatDialogModule,
     MatTooltipModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    DragDropModule
   ],
   providers: [
     AuthguardServiceService

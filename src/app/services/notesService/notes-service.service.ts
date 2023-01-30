@@ -81,6 +81,8 @@ export class NoteService {
     }
     return this.httpService.getService("/notes/getArchiveNotesList",true,header)
   }
+
+  
   colorService(data:any){
     let header = {
       headers: new HttpHeaders({
@@ -90,6 +92,9 @@ export class NoteService {
   }
   return this.httpService.postService("/notes/changesColorNotes", data, true, header)
   }
+
+
+
   permanentDelete(payload:any)
   {
     let header = {

@@ -50,8 +50,11 @@ export class CollaboratorComponent implements OnInit {
     this.note.addCollaborator(this.data.id, data).subscribe((response: any) => {
       console.log(response);
       this.collaborators.push(data);
+      this.SnackBar('Collaborator Added','Dismiss')
+      this.collabData.res
     })
-    this.SnackBar('Collaborator Added','Dismiss')
+   
+    
   }
 
 
@@ -73,7 +76,9 @@ export class CollaboratorComponent implements OnInit {
   }
   save(collabList:any){
     this.dialogRef.close(collabList);
+    this.addCollab()
     this.SnackBar('Collaborators Saved','Dismiss')
+    
   }
 
   removeCollab(collabid:any){

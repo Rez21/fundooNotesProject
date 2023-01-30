@@ -90,7 +90,7 @@ export class IconsComponent implements OnInit {
     this.SnackBar('Note Unarchived','Dismiss')
   }
 
-  // array of colors
+  // array of colors for notes
   colors: Array<any> = [
     { code: '#fff', name: 'white' },
     { code: '#f28b82', name: 'red' },

@@ -1,8 +1,8 @@
 
-<div class="head">
-    <div class="notes" *ngFor='let note of recieveNoteList | filter: Search' [style.background]="note.color" [class.gridToList]="gridlist" >
+<div class="head" cdkDropList [cdkDropListData]="recieveNoteList" (cdkDropListDropped)="drop($event)">
+    <div class="notes" *ngFor='let note of recieveNoteList | filter: Search' [style.background]="note.color" cdkDrag [class.gridToList]="gridlist" >
         <div class="title" >
-            <p (click)="openDialog(note)">{{note.title}}</p>
+            <p (click)="openDialog(note)">{{note.title | uppercase}}</p>
         </div>
         <div class="descriptiodata">
             <p (click)="openDialog(note)">{{note.description}}</p>

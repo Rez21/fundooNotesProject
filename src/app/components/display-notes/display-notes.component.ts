@@ -3,6 +3,7 @@ import { AUTO_STYLE } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 import { DataServiceService } from 'src/app/services/dataService/data-service.service';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-display-notes',
@@ -35,8 +36,6 @@ export class DisplayNotesComponent implements OnInit {
   }
   openDialog(note: any) {
     const dialogRef = this.dialog.open(UpdateNotesComponent, {
-      //  width: '100%',
-      // height: 'auto',
       panelClass: "updateDialog",
       data: note,
 
@@ -53,5 +52,20 @@ export class DisplayNotesComponent implements OnInit {
     this.message = $event;
     console.log("message", this.message);
     this.eventForDisplay.emit(this.message)
+  }
+
+
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
   }
 }
